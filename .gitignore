@@ -31,7 +31,6 @@ wp-config.php
 wp-cron.php
 xmlrpc.php
 wp-*.php
-index.php
 # ignore packaged files
 *.7z
 *.dmg
