@@ -178,6 +178,15 @@ function columb_scripts()
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+//Подключение логотипа
+add_theme_support('custom-logo', [
+	'height'      => 286,
+	'width'       => 127,
+	'flex-width'  => false,
+	'flex-height' => false,
+	'header-text' => '',
+	'unlink-homepage-logo' => false, // WP 5.5
+]);
 //Отлюченеи rss-ленты
 function wpschool_disable_feed()
 {

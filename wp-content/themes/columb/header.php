@@ -116,7 +116,7 @@
 		<div class="header-bottom">
 			<a href="#" class="link-logo">
 				<div class="header-logo">
-					<img src="img/logo.svg" alt="LOGO">
+					<?php echo get_custom_logo() ?>
 					<p>c 2000 года</p>
 				</div>
 			</a>
