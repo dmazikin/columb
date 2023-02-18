@@ -1,0 +1,29 @@
+.transfer-info-service-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.transfer-info-service-left {
+  flex-basis: 100%;
+}
+
+
+.transfer-info-sign {
+  background: #EFF5FF;
+  border: 1px solid #393185;
+  border-radius: 15px;
+}
+.transfer-info-sign>p {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .transfer-info-service-text-wrapper {
+    flex-wrap: wrap;
+  }
+}

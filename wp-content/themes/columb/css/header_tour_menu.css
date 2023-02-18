@@ -1,0 +1,52 @@
+.tour-menu-open {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-menu-open:hover {
+  overflow: unset;
+}
+
+.tour-menu-open:hover .tour-menu {
+  visibility: visible;
+  top: 100%;
+  z-index: 1000;
+}
+
+
+.tour-menu {
+  visibility: hidden;
+  width: 201px;
+  background: #FFFFFF;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  z-index: -5;
+  transition: top .3s ease-in-out;
+  top: -200px;
+}
+
+.tour-menu > a {
+  text-decoration: none;
+  margin: 20px;
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.tour-menu.hover {
+}
+
+
+.tour-menu > a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}

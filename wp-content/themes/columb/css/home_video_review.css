@@ -1,0 +1,62 @@
+.videoSwiper .swiper-slide>img{
+  border-radius: 15px;
+  height: 338px;
+  width: 243px;
+}
+
+
+.videoSwiper .swiper-slide{
+  cursor: pointer;
+  position: relative;
+}
+
+.videoSwiper .swiper-slide .play-button{
+  position: absolute;
+  z-index: 1000;
+  top: calc(50% - 50px/2);
+  left: calc(50% - 50px/2);
+  width: 50px;
+  height: 50px;
+}
+
+.play-button>img{
+  width:100%;
+}
+
+
+.video-popup{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.83);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  transition: transform .3s ease-in-out;
+  transform: scale(0);
+}
+
+.video-popup.active {
+  display: flex;
+  transform: scale(1);
+}
+
+.inner-video-popup{
+  width:50%;
+  height: 50%;
+}
+
+.inner-video-popup iframe{
+  display: none;
+  width:100%;
+  height:100%;
+}
+
+.video-popup.active iframe{
+  display: block;
+}

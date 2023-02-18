@@ -1,0 +1,47 @@
+.rev-card-top {
+  width: 100%;
+}
+
+.rev-card-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider {
+  border: 2px solid #EFF5FF;
+}
+
+.rev-heading {
+  padding: 20px 0;
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+}
+
+.rev-card-text {
+  padding: 10px 0;
+  font-family: 'Roboto', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.rev-card-date {
+  padding: 5px 10px;
+  background: #EFF5FF;
+  border-radius: 15px;
+}
+
+@media (max-width: 1603px) {
+  div.review.container > div.card-container > .card {
+  width: 100%;
+  }
+}

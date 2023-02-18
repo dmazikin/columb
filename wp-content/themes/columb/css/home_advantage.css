@@ -1,0 +1,58 @@
+.adv-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.adv-card {
+  display: flex;
+  flex-basis: 32%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adv-card-content {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.adv-heading {
+  margin: 20px 0;
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  color: #393185;
+}
+
+.advantage-text {
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #000000;
+}
+
+@media (max-width: 1300px) {
+  .adv-card {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+  .adv-card {
+    flex-basis: 90%;
+  }
+}
+

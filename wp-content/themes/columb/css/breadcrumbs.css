@@ -1,0 +1,57 @@
+.breadcrumbs {
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 !important;
+  gap: 15px;
+}
+
+.breadcrumbs > a {
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.breadcrumbs > a.active {
+  text-decoration: #393185 underline;
+  font-weight: 700;
+  color: #393185;
+}
+
+@media (max-width: 1603px) {
+  .breadcrumbs {
+    max-width: 450px;
+  }
+
+  .breadcrumbs > a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+
+}
+
+@media (max-width: 748px) {
+  .breadcrumbs-container{
+    padding:0;
+  }
+  .breadcrumbs {
+    max-width: 320px;
+  }
+
+  .breadcrumbs > a {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+
+}
