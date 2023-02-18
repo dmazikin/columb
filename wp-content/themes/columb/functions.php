@@ -1,4 +1,5 @@
 <?php
+
 /**
  * columb functions and definitions
  *
@@ -7,9 +8,9 @@
  * @package columb
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define('_S_VERSION', '1.0.0');
 }
 
 /**
@@ -19,17 +20,18 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function columb_setup() {
+function columb_setup()
+{
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on columb, use a find and replace
 		* to change 'columb' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'columb', get_template_directory() . '/languages' );
+	load_theme_textdomain('columb', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	/*
 		* Let WordPress manage the document title.
@@ -37,19 +39,19 @@ function columb_setup() {
 		* hard-coded <title> tag in the document head, and expect WordPress to
 		* provide it for us.
 		*/
-	add_theme_support( 'title-tag' );
+	add_theme_support('title-tag');
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'columb' ),
+			'menu-1' => esc_html__('Primary', 'columb'),
 		)
 	);
 
@@ -83,7 +85,7 @@ function columb_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support('customize-selective-refresh-widgets');
 
 	/**
 	 * Add support for core custom logo.
@@ -100,7 +102,7 @@ function columb_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'columb_setup' );
+add_action('after_setup_theme', 'columb_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +111,24 @@ add_action( 'after_setup_theme', 'columb_setup' );
  *
  * @global int $content_width
  */
-function columb_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'columb_content_width', 640 );
+function columb_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('columb_content_width', 640);
 }
-add_action( 'after_setup_theme', 'columb_content_width', 0 );
+add_action('after_setup_theme', 'columb_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function columb_widgets_init() {
+function columb_widgets_init()
+{
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'columb' ),
+			'name'          => esc_html__('Sidebar', 'columb'),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'columb' ),
+			'description'   => esc_html__('Add widgets here.', 'columb'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -132,22 +136,34 @@ function columb_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'columb_widgets_init' );
+add_action('widgets_init', 'columb_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function columb_scripts() {
-	wp_enqueue_style( 'columb-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'columb-style', 'rtl', 'replace' );
+/* Регистрируем массив подключаемых стилей в хедер */
+add_action('wp_enqueue_scripts', 'register_style_header');
 
-	wp_enqueue_script( 'columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+function register_style_header()
+{
+	wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css');
+	wp_register_style('main-style', get_template_directory_uri() . '/css/main.css');
+	wp_enqueue_style('normalize');
 }
-add_action( 'wp_enqueue_scripts', 'columb_scripts' );
+/* Подключаем стили и скрпиты */
+add_action('wp_enqueue_scripts', 'columb_scripts');
+function columb_scripts()
+{
+	wp_enqueue_style('columb-style-header', get_template_directory_uri() . '/css/header.css', array('normalize', 'main-style'));
+	wp_enqueue_script('columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
+}
+/* function columb_scripts()
+{
+	wp_enqueue_style('columb-style-header', get_template_directory_uri() . '/css/header.css', array('normalize' => get_template_directory_uri() . '/css/normalize.css'));
+
+	wp_enqueue_script('columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
+}
+add_action('wp_enqueue_scripts', 'columb_scripts'); */
 
 /**
  * Implement the Custom Header feature.
@@ -172,7 +188,19 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
+//Отлюченеи rss-ленты
+function wpschool_disable_feed()
+{
+	wp_redirect('/404.php');
+}
+add_action('do_feed', 'wpschool_disable_feed', 1);
+add_action('do_feed_rdf', 'wpschool_disable_feed', 1);
+add_action('do_feed_rss', 'wpschool_disable_feed', 1);
+add_action('do_feed_rss2', 'wpschool_disable_feed', 1);
+add_action('do_feed_atom', 'wpschool_disable_feed', 1);
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'rsd_link');
