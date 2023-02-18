@@ -148,43 +148,18 @@ function register_style_header()
 {
 	wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css');
 	wp_register_style('main-style', get_template_directory_uri() . '/css/main.css');
+	wp_register_style('home-style', get_template_directory_uri() . '/css/home.css');
 	wp_enqueue_style('normalize');
+	wp_enqueue_style('main-style');
+	wp_enqueue_style('home-style');
 }
 /* Подключаем стили и скрпиты */
 add_action('wp_enqueue_scripts', 'columb_scripts');
 function columb_scripts()
 {
-	wp_enqueue_style('columb-style-header', get_template_directory_uri() . '/css/header.css', array('normalize', 'main-style'));
+	wp_enqueue_style('columb-style-header', get_template_directory_uri() . '/css/header.css', array('normalize', 'main-style', 'home-style'));
 	wp_enqueue_script('columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
 }
-/* function columb_scripts()
-{
-	wp_enqueue_style('columb-style-header', get_template_directory_uri() . '/css/header.css', array('normalize' => get_template_directory_uri() . '/css/normalize.css'));
-
-	wp_enqueue_script('columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
-}
-add_action('wp_enqueue_scripts', 'columb_scripts'); */
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
 /**
  * Load Jetpack compatibility file.
  */
