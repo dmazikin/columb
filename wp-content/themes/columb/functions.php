@@ -187,6 +187,7 @@ add_theme_support('custom-logo', [
 	'header-text' => '',
 	'unlink-homepage-logo' => false, // WP 5.5
 ]);
+
 //Отлюченеи rss-ленты
 function wpschool_disable_feed()
 {
