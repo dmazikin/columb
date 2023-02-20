@@ -2,9 +2,8 @@
 
 body {
   display: block;
-  background-color: #EFF5FF;
+  background-color: #eff5ff;
 }
-
 
 body img {
   object-fit: cover;
@@ -18,7 +17,6 @@ a {
   text-decoration: none;
 }
 
-
 .container {
   max-width: 1572px;
   margin: 20px auto;
@@ -26,20 +24,21 @@ a {
   padding-right: 16px;
 }
 
-.right-button, .card-button {
+.right-button,
+.card-button {
   width: 175px;
   height: 44px;
-  background: linear-gradient(180deg, #0C669A 44.27%, #34B1F9 100%);
-  border: 1px solid #0C669A;
+  background: linear-gradient(180deg, #0c669a 44.27%, #34b1f9 100%);
+  border: 1px solid #0c669a;
   border-radius: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
-.right-button:active, .card-button:active {
+.right-button:active,
+.card-button:active {
   background: #393185;
 }
-
 
 .container > .more-button-row {
   display: flex;
@@ -51,18 +50,14 @@ a {
   margin: 0;
 }
 
-
 .more-button-mobile {
   display: none;
 }
 
-
 .line {
   width: 50%;
   border: 4px solid #393185;
-
 }
-
 
 .head-text {
   width: fit-content;
@@ -72,7 +67,6 @@ a {
   line-height: 71px;
   color: #393185;
 }
-
 
 .menu-button-mobile {
   display: flex;
@@ -84,7 +78,7 @@ a {
 }
 
 .menu-button-mobile > .line {
-  border: 2px solid #2D9CDB;
+  border: 2px solid #2d9cdb;
 }
 
 .menu-button-mobile:hover > .line {
@@ -99,7 +93,6 @@ a {
   width: 22px;
 }
 
-
 .title {
   width: 100%;
   display: flex;
@@ -111,7 +104,7 @@ a {
 }
 
 .text-accented {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
@@ -119,8 +112,8 @@ a {
   color: #393185;
 }
 
-.bold{
-  font-weight: bold!important;
+.bold {
+  font-weight: bold !important;
 }
 
 .app-divider {
@@ -134,54 +127,47 @@ a {
   .more-button {
     display: none;
   }
-
   .more-button-mobile {
     display: block;
   }
-
   .head-text {
     font-size: 28px;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
   }
-
   .line {
     border: 2px solid #393185;
   }
-
   .container > .more-button-row {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .text-accented {
     font-size: 15px;
     line-height: 24px;
   }
-
 }
 
 @media (max-width: 748px) {
   .head-text {
     font-size: 20px;
   }
-
-  .right-button, .card-button {
+  .right-button,
+  .card-button {
     font-size: 13px;
   }
-
   .text-accented {
     font-size: 13px;
     line-height: 21px;
   }
 }
 
-
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -202,33 +188,37 @@ p {
   margin: 0;
 }
 
-.container > p, .text p, .text {
+.container > p,
+.text p,
+.text {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 27px;
 }
 
 @media (max-width: 1603px) {
-  .container > p, .text p, .text {
+  .container > p,
+  .text p,
+  .text {
     font-size: 15px;
-  line-height: 24px;
-
+    line-height: 24px;
   }
 }
 
 @media (max-width: 748px) {
-  .container > p, .text p, .text {
+  .container > p,
+  .text p,
+  .text {
     font-size: 13px;
-  line-height: 21px;
+    line-height: 21px;
   }
 }
-
 
 /*
  * Remove text-shadow in selection highlight:
@@ -392,10 +382,7 @@ textarea {
   /* Style adjustments for viewports that meet the condition */
 }
 
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -415,20 +402,16 @@ textarea {
     box-shadow: none !important;
     text-shadow: none !important;
   }
-
   a,
   a:visited {
     text-decoration: underline;
   }
-
   a[href]::after {
     content: " (" attr(href) ")";
   }
-
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
-
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
@@ -437,17 +420,14 @@ textarea {
   a[href^="javascript:"]::after {
     content: "";
   }
-
   pre {
     white-space: pre-wrap !important;
   }
-
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-
   /*
    * Printing Tables:
    * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -455,22 +435,59 @@ textarea {
   thead {
     display: table-header-group;
   }
-
   tr,
   img {
     page-break-inside: avoid;
   }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-
   h2,
   h3 {
     page-break-after: avoid;
   }
 }
 
+.mobile-menu {
+  position: relative;
+  width: 128px;
+  background: #ffffff;
+  border-radius: 0px 0px 15px 15px;
+  transition: all 0.3s;
+  transform: scaleX(0);
+  left: 40px;
+}
+
+.menu-button-mobile {
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu.active {
+  left: -39px;
+  transform: scaleX(1);
+}
+
+.line {
+  margin: 2px 0;
+}
+
+@media (max-width: 748px) {
+  .menu-button-mobile {
+    display: flex;
+    margin-right: 10px;
+  }
+  .page-button {
+    height: 42px;
+    width: 120px;
+  }
+  .page-button > a {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+  }
+}
