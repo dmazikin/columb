@@ -26,30 +26,31 @@
 			<div class="top-left">
 				<p> 8(862)2918810</p>
 				<div class="header-icons">
-					<a href="#">
+					<a href="<?= the_field('vk_icon_link') ?>">
 						<div class="vk">
-							<img src="img/vk.svg" alt="img">
+							<img src="<?= the_field('vk_icon_header') ?>" alt="img">
 						</div>
 					</a>
-					<a href="#">
+					<a href="<?= the_field('telegram_icon_link') ?>">
 						<div class="telegram">
-							<img src="img/telegram.svg" alt="img">
+							<img src="<?= the_field('telegram_icon_header') ?>" alt="img">
 						</div>
 					</a>
-					<a href="#">
+					<a href="<?= the_field('youtube_icon_link') ?>">
 						<div class="youtube">
-							<img src="img/youtube.svg" alt="img">
+							<img src="<?= the_field('youtube_icon_header') ?>" alt="img">
 						</div>
 					</a>
-					<a href="#">
+					<a href="<?= the_field('wa_icon_link') ?>">
 						<div class="whatsapp">
-							<img src="img/whatsapp.svg" alt="img">
+							<img src="<?= the_field('wa_icon_header') ?>" alt="img">
 						</div>
 					</a>
 					<div class="emblem">
-						<img src="img/emblem.svg" alt="img">
+						<img src="<?= the_field('emblema_icon_header') ?>" alt="img">
 					</div>
 				</div>
+
 			</div>
 			<div class="top-right">
 				<div class="header-nav-icons">
