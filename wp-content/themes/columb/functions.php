@@ -162,7 +162,7 @@ function register_style_header()
 add_action('wp_enqueue_scripts', 'columb_scripts');
 function columb_scripts()
 {
-	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array('normalize', 'header', 'home-style', 'header_search_menu', 'slider', 'home_about', 'home_card', 'home_transfer', 'home_booking', 'home_service', 'home_advantage', 'home_review', 'home_video_review', 'callButton', 'popup', 'footer', 'header_tour_menu', 'menu_mobile'));
+	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array('normalize', 'header', 'home-style', 'header_search_menu', 'slider', 'home_about', 'home_card', 'home_transfer', 'home_booking', 'home_service', 'home_advantage', 'home_review', 'home_video_review', 'callButton', 'popup', 'footer', 'header_tour_menu'));
 	wp_enqueue_script('columb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true);
 }
 /**
