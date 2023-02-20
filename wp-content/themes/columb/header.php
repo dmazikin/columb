@@ -122,52 +122,27 @@
 				</div>
 			</a>
 			<div class="header-menu">
-				<div class="page-button active left">
-					<a href="#">Главная</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button left tour-menu-open">
-					<a href="#">Все экскурсии </a>
-					<div class="tour-menu">
-						<a>Красная поляна - Русская Швецария</a>
-						<a>Чарующая Абхазия</a>
-						<a>Обзорные экскурсии по Сочи</a>
-						<a>Природные экскурсии</a>
-						<a>Тематические экскурсии</a>
-						<a>Активный отдых</a>
-						<a>Семейный отдых</a>
-					</div>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button left">
-					<a href="#">VIP - обслуживание</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button left">
-					<a href="#">MICE / Event - обслуживание</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="head-spacer-center"></div>
-				<div class="page-button">
-					<a href="#">Трансфер</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button">
-					<a href="#">Размещение</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button">
-					<a href="#">О компании</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button">
-					<a href="#">Новости / Анонсы</a>
-					<div class="page-marker"></div>
-				</div>
-				<div class="page-button">
-					<a href="#">Контакты</a>
-					<div class="page-marker"></div>
-				</div>
+				<?
+				wp_nav_menu([
+					'theme_location'  => '',
+					'menu'            => '',
+					'container'       => false,
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'menu',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => '',
+				]);
+				?>
+
 			</div>
 			<div class="menu-button-mobile">
 				<div class="line big"></div>
