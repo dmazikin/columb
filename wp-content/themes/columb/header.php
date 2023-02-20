@@ -24,7 +24,7 @@
 	<div class="header">
 		<div class="header-top">
 			<div class="top-left">
-				<p></p>
+				<p><?= the_field('phone') ?></p>
 				<div class="header-icons">
 					<a href="<?= the_field('vk_icon_link') ?>">
 						<div class="vk">
