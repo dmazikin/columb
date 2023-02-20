@@ -48,13 +48,6 @@ function columb_setup()
 		*/
 	add_theme_support('post-thumbnails');
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__('Primary', 'columb'),
-		)
-	);
-
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
@@ -201,3 +194,10 @@ add_action('do_feed_atom', 'wpschool_disable_feed', 1);
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'rsd_link');
+//Ругистрируем меню
+add_action('after_setup_theme', 'theme_register_nav_menu');
+
+function theme_register_nav_menu()
+{
+	register_nav_menu('primary', 'Главное меню');
+}
