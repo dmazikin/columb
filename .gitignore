@@ -40,3 +40,4 @@ wp-*.php
 *.rar
 *.tar
 *.zip
+.vscode
