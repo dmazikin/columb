@@ -24,7 +24,7 @@
 	<div class="header">
 		<div class="header-top">
 			<div class="top-left">
-				<p> 8(862)2918810</p>
+				<p></p>
 				<div class="header-icons">
 					<a href="<?= the_field('vk_icon_link') ?>">
 						<div class="vk">
