@@ -18,5 +18,23 @@ get_header();
 <div class="call-order popup-open">
   <p>Заказать обратный звонок</p>
 </div>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="img/slides/1.png" />
+      <div class="slider-text">Открываем Сочи вместе с вами!</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="img/slides/2.png" />
+      <div class="slider-text">Открываем Сочи вместе с вами!</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="img/slides/3.png" />
+      <div class="slider-text">Открываем Сочи вместе с вами!</div>
+    </div>
+  </div>
+  <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
+  <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
+</div>
 <?php
 get_footer();
