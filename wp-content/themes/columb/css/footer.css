@@ -1,5 +1,5 @@
 .footer {
-  background-image: url('../img/footer_background.png');
+  background-image: url("../img/footer_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -45,47 +45,9 @@
   align-items: center;
 }
 
-
-.page-button {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 135px;
-  height: 55px
-}
-
-.page-marker {
-  display: none;
-  margin-top: 5px;
-  width: 7px;
-  height: 7px;
-  background: #393185;
-  border-radius: 7px;
-}
-
-.page-button > a {
-  text-decoration: none;
-  text-align: center;
-  font-family: 'Roboto', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.03em;
-  color: #000000;
-}
-
-.page-button.active > a {
-  color: #393185;
-}
-
-.page-button.active > .page-marker {
-  display: block;
-}
-
-.bottom-left, .bottom-center, .bottom-right {
+.bottom-left,
+.bottom-center,
+.bottom-right {
   width: 33%;
   display: flex;
   flex-direction: column;
@@ -93,11 +55,13 @@
   justify-content: flex-start;
 }
 
-.bottom-center, .bottom-right {
+.bottom-center,
+.bottom-right {
   align-items: center;
 }
 
-.bottom-left, .bottom-right {
+.bottom-left,
+.bottom-right {
   margin-bottom: 20px;
 }
 
@@ -118,7 +82,7 @@
   justify-content: center;
   align-items: center;
   width: 260px;
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -129,7 +93,7 @@
 .register-number {
   width: 110px;
   height: 60px;
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -139,12 +103,12 @@
 }
 
 .footer-phone {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 38px;
-  color: #341EAE;
+  color: #341eae;
 }
 
 .footer-ico {
@@ -154,7 +118,7 @@
 }
 
 .rights {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -163,7 +127,7 @@
 }
 
 .bottom-right > p {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -172,8 +136,9 @@
   color: #000000;
 }
 
-.footer-email > p, .footer-manager > p {
-  font-family: 'Roboto', serif;
+.footer-email > p,
+.footer-manager > p {
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -184,12 +149,12 @@
 
 .footer-email > p > span {
   font-weight: 500;
-  color: #2D9CDB;
+  color: #2d9cdb;
 }
 
 .footer-manager > p > span {
   font-weight: 500;
-  color: #341EAE;
+  color: #341eae;
 }
 
 .anchor {
@@ -197,19 +162,16 @@
   height: 177px;
 }
 
-
 .footer-world > img {
   width: 349px;
   height: 367px;
 }
-
 
 @media (max-width: 1603px) {
   .footer-menu {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-
   .footer-logo {
     width: 149px;
     height: 66px;
@@ -217,7 +179,6 @@
     position: unset;
     padding: 0;
   }
-
   .footer-top {
     display: flex;
     flex-wrap: nowrap;
@@ -225,61 +186,50 @@
     justify-content: space-between;
     align-items: center;
   }
-
   .page-button {
     height: 55px;
     width: 115px;
   }
-
   .page-button > a {
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
   }
-
-
-  .bottom-left, .bottom-center, .bottom-right {
+  .bottom-left,
+  .bottom-center,
+  .bottom-right {
     align-items: center;
   }
-
-
   .footer-phone {
     font-weight: 700;
     font-size: 16px;
     line-height: 26px;
   }
-
   .footer-our-partner {
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
   }
-
   .footer-our-partner > img {
     width: 141px;
     height: 36px;
   }
-
   .rosturism > img {
     width: 160px;
     height: 61px;
   }
-
   .rosturism {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
   }
-
   .footer-ico {
     width: 24px;
     height: 24px;
   }
-
   .footer-icons {
     margin-left: -50px !important;
   }
-
   .rights {
     font-weight: 300;
     font-size: 14px;
@@ -287,23 +237,18 @@
     margin-left: 20px;
     width: 235px;
   }
-
   .anchor {
     width: 148px;
     height: 155px;
   }
-
   .footer-world > img {
     width: 260px;
     height: 273px;
   }
-
   .bottom-right > p {
     font-size: 15px;
     line-height: 18px;
   }
-
-
 }
 
 @media (max-width: 748px) {
@@ -314,35 +259,26 @@
     justify-content: space-evenly;
     align-items: center;
   }
-
   .footer-world > img {
     width: 146px;
     height: 154px;
   }
-
   .footer-menu {
     display: none;
   }
-
   .footer-icons {
     margin: 20px 0 !important;
   }
-
   .rights {
     margin-left: 0;
     width: auto;
     text-align: center;
   }
-
   .footer-top {
     padding: 0 10px;
   }
-
   .footer .row {
     width: 100%;
     justify-content: space-evenly !important;
-
   }
 }
-
-

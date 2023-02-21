@@ -115,35 +115,20 @@
 		</div>
 
 		<div class="header-bottom">
-			<a href="#" class="link-logo">
-				<div class="header-logo">
-					<?php echo get_custom_logo() ?>
-					<p>c 2000 года</p>
-				</div>
-			</a>
-			<div class="header-menu">
-				<?
-				wp_nav_menu([
-					'theme_location'  => '',
-					'menu'            => '',
-					'container'       => false,
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => 'menu',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => '',
-				]);
-				?>
-
+			<div class="header-logo">
+				<?php echo get_custom_logo() ?>
+				<p>c 2000 года</p>
 			</div>
+			<?
+			wp_nav_menu([
+				'theme_location'  => 'primary',
+				'container'       => false,
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
+				'depth'           => 1,
+			]);
+			?>
 			<div class="menu-button-mobile">
 				<div class="line big"></div>
 				<div class="line small"></div>
