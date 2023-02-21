@@ -119,6 +119,40 @@ ul.header-menu {
   color: #393185;
 }
 
+/*Заказать звонок*/
+
+.call-order:hover {
+  cursor: pointer;
+}
+
+.call-order {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: fixed;
+  width: 247px;
+  height: 64px;
+  left: -108px;
+  top: 50%;
+  background: #c5262a;
+  border: 1px solid #c5262a;
+  border-radius: 15px;
+  transform: rotate(-90deg);
+  z-index: 999;
+  align-items: center;
+}
+
+.call-order > p {
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.76);
+}
+
 .menu-button-mobile {
   display: flex;
   flex-direction: column;
@@ -540,5 +574,29 @@ textarea {
     font-size: 13px;
     line-height: 13px;
     text-align: center;
+  }
+}
+
+@media (max-width: 1603px) {
+  .call-order {
+    width: 211px;
+    height: 59px;
+    left: -90px;
+  }
+  .call-order > p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 748px) {
+  .call-order {
+    left: -71px;
+    width: 173px;
+    height: 30px;
+    border-radius: 0px 0px 15px 15px;
+  }
+  .call-order > p {
+    font-size: 11px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.76);
   }
 }
