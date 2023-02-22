@@ -21,15 +21,15 @@ get_header();
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <img src="img/slides/1.png" />
+      <img src="<?php echo get_template_directory_uri() .  '/img/1.png' ?>" />
       <div class="slider-text">Открываем Сочи вместе с вами!</div>
     </div>
     <div class="swiper-slide">
-      <img src="img/slides/2.png" />
+      <img src="<?php echo get_template_directory_uri() .  '/img/2.png' ?>" />
       <div class="slider-text">Открываем Сочи вместе с вами!</div>
     </div>
     <div class="swiper-slide">
-      <img src="img/slides/3.png" />
+      <img src="<?php echo get_template_directory_uri() .  '/img/3.png' ?>" />
       <div class="slider-text">Открываем Сочи вместе с вами!</div>
     </div>
   </div>

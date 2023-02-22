@@ -8,8 +8,7 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-
-
+console.log(111);
 var perView = 6;
 var perBookingView = 3;
 if (window.matchMedia("(max-width: 1603px)").matches) {
@@ -19,7 +18,6 @@ if (window.matchMedia("(max-width: 748px)").matches) {
   perView = 1;
   perBookingView = 1;
 }
-
 
 var videoSwiper = new Swiper(".videoSwiper", {
   slidesPerView: perView,
@@ -46,18 +44,16 @@ var bookingSwiper = new Swiper(".bookingSwiper", {
   },
 });
 
-
 function resizeUpdate() {
   if (window.matchMedia("(max-width: 1603px)").matches) {
     if (window.matchMedia("(max-width: 748px)").matches) {
       videoSwiper.params.slidesPerGroup = 1;
       videoSwiper.params.slidesPerView = 1;
-      try{
+      try {
         bookingSwiper.params.slidesPerGroup = 1;
         bookingSwiper.params.slidesPerView = 1;
-      }
-      catch (e){
-        for(let newel in bookingSwiper){
+      } catch (e) {
+        for (let newel in bookingSwiper) {
           bookingSwiper[newel].params.slidesPerGroup = 1;
           bookingSwiper[newel].params.slidesPerView = 1;
         }
@@ -70,19 +66,17 @@ function resizeUpdate() {
     try {
       bookingSwiper.params.slidesPerGroup = 3;
       bookingSwiper.params.slidesPerView = 3;
-    }
-    catch (e){
-        for(let newel in bookingSwiper){
-          bookingSwiper[newel].params.slidesPerGroup = 3;
-          bookingSwiper[newel].params.slidesPerView = 3;
-        }
+    } catch (e) {
+      for (let newel in bookingSwiper) {
+        bookingSwiper[newel].params.slidesPerGroup = 3;
+        bookingSwiper[newel].params.slidesPerView = 3;
       }
+    }
 
     return 0;
   }
   videoSwiper.params.slidesPerGroup = 6;
   videoSwiper.params.slidesPerView = 6;
 }
-
 
 window.onresize = resizeUpdate;
