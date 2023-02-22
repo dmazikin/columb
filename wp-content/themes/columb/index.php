@@ -50,6 +50,15 @@ get_header();
   <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
   <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
 </div>
+<div class="about container">
+  <h2 class="about-title"><?= the_field('index_about_title') ?></h2>
+  <div class="content">
+    <div class="left-text text">
+      <?= the_field('index_about_desc') ?>
+    </div>
+    <img class="right-image" src="<?= the_field('index_about_img') ?>" />
+  </div>
+</div>
 
 <?php
 get_footer();
