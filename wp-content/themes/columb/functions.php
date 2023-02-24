@@ -201,3 +201,14 @@ function theme_register_nav_menu()
 {
 	register_nav_menu('primary', 'Главное меню');
 }
+//Включаем поддержку вукомерц
+function columbtheme_add_woocommerce_support()
+{
+	add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'columbtheme_add_woocommerce_support');
+//Поддержка галлереии вукомерц в теме 
+add_theme_support('wc-product-gallery-zoom');
+add_theme_support('wc-product-gallery-lightbox');
+add_theme_support('wc-product-gallery-slider');
