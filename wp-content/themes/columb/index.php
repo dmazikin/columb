@@ -59,7 +59,7 @@ get_header();
     <img class="right-image" src="<?= the_field('index_about_img') ?>" />
   </div>
 </div>
-
+<?php woocommerce_content(); ?>
 <?php
 get_footer();
 ?>
