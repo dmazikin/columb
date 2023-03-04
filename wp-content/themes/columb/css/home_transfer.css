@@ -1,8 +1,7 @@
-
 .transfer > p {
   padding-top: 12px;
   padding-bottom: 12px;
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -21,11 +20,11 @@
   width: fit-content;
   padding-right: 30px;
   padding-left: 30px;
-  background-color: #EFF5FF;
+  background-color: #eff5ff;
   position: absolute;
   top: -20px;
-  left: calc(50% - 951px/2);
-  font-family: 'Roboto', serif;
+  left: calc(50% - 951px / 2);
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -60,18 +59,19 @@
 }
 
 .transfer-text-danger {
-  font-family: 'Roboto', serif;
+  position: absolute;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 28px;
   text-align: center;
-  color: #C5262A;
+  color: #c5262a;
   max-width: 238px;
 }
 
 .car-name {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
@@ -82,7 +82,7 @@
 .car-text {
   margin-top: 3px;
   margin-bottom: 2px;
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -95,47 +95,38 @@
   margin-top: 5px;
 }
 
-
 @media (max-width: 1400px) {
   .transfer-text-danger {
     font-size: 15px;
     max-width: 150px;
   }
-
 }
 
-
 @media (max-width: 1365px) {
-
   .transfer-text-danger {
     font-size: 17px;
     max-width: 280px;
   }
-
   .transfer-container {
     max-width: 724px;
   }
-
   .subhead-text {
     font-weight: 700;
     font-size: 20px;
     line-height: 33px;
-    left: calc(50% - 618px/2);
+    left: calc(50% - 618px / 2);
   }
 }
 
-
 @media (max-width: 748px) {
-
   .subhead-text {
     font-weight: 700;
     font-size: 16px;
     line-height: 33px;
-    left: calc(50% - 268px/2);
+    left: calc(50% - 268px / 2);
     /*top: 50px;*/
     text-align: center;
     width: 268px;
     padding: 0;
   }
 }
-
