@@ -77,6 +77,10 @@ ul.header-menu {
 
 .right-button,
 .card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 175px;
   height: 44px;
   background: linear-gradient(180deg, #0c669a 44.27%, #34b1f9 100%);
