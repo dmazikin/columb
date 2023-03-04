@@ -202,18 +202,24 @@ function theme_register_nav_menu()
 	register_nav_menu('primary', 'Главное меню');
 }
 //Включаем поддержку вукомерц
+add_action('after_setup_theme', 'columbtheme_add_woocommerce_support');
 function columbtheme_add_woocommerce_support()
 {
 	add_theme_support('woocommerce');
 }
 
-add_action('after_setup_theme', 'columbtheme_add_woocommerce_support');
-
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
 //Поддержка галлереии вукомерц в теме 
 add_theme_support('wc-product-gallery-zoom');
 add_theme_support('wc-product-gallery-lightbox');
 add_theme_support('wc-product-gallery-slider');
 //Отключение стилей вукомерц
 add_filter('woocommerce_enqueue_styles', '__return_false');
+
+add_action('init', 'remove_custom_action');
+function remove_custom_action()
+{
+	remove_action('wp_head', 'wc_gallery_noscript');
+}
