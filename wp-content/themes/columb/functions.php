@@ -161,8 +161,9 @@ function columb_scripts()
 {
 	wp_enqueue_style('swiper-style', get_template_directory_uri() . '/css/swiper-bundle.min.css', array(), null);
 	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array('normalize', 'header', 'header_search_menu', 'slider', 'home_about', 'home_card', 'home_transfer', 'home_booking', 'home_service', 'home_advantage', 'home_review', 'home_video_review', 'popup', 'header_tour_menu'), null);
-	wp_enqueue_script('columb-swiper-js', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
-	wp_enqueue_script('columb-slider-js', get_template_directory_uri() . '/js/slider_activate.js', array(), null, true);
+	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
+	wp_enqueue_script('columb-slider', get_template_directory_uri() . '/js/slider_activate.js', array(), null, true);
+	wp_enqueue_script('columb-video-popup', get_template_directory_uri() . '/js/video_popup.js', array(), null, true);
 	wp_enqueue_script('jquery');
 }
 /**
