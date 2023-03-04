@@ -20,34 +20,34 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 	<div class="header">
 		<div class="header-top">
 			<div class="top-left">
-				<p><?= the_field('phone') ?></p>
+				<p><?= the_field('phone', 5) ?></p>
 				<div class="header-icons">
-					<a href="<?= the_field('vk_icon_link') ?>">
+					<a href="<?= the_field('vk_icon_link', 5) ?>">
 						<div class="vk">
-							<img src="<?= the_field('vk_icon_header') ?>" alt="img">
+							<img src="<?= the_field('vk_icon_header', 5) ?>" alt="img">
 						</div>
 					</a>
-					<a href="<?= the_field('telegram_icon_link') ?>">
+					<a href="<?= the_field('telegram_icon_link', 5) ?>">
 						<div class="telegram">
-							<img src="<?= the_field('telegram_icon_header') ?>" alt="img">
+							<img src="<?= the_field('telegram_icon_header', 5) ?>" alt="img">
 						</div>
 					</a>
-					<a href="<?= the_field('youtube_icon_link') ?>">
+					<a href="<?= the_field('youtube_icon_link', 5) ?>">
 						<div class="youtube">
-							<img src="<?= the_field('youtube_icon_header') ?>" alt="img">
+							<img src="<?= the_field('youtube_icon_header', 5) ?>" alt="img">
 						</div>
 					</a>
-					<a href="<?= the_field('wa_icon_link') ?>">
+					<a href="<?= the_field('wa_icon_link', 5) ?>">
 						<div class="whatsapp">
-							<img src="<?= the_field('wa_icon_header') ?>" alt="img">
+							<img src="<?= the_field('wa_icon_header', 5) ?>" alt="img">
 						</div>
 					</a>
 					<div class="emblem">
-						<img src="<?= the_field('emblema_icon_header') ?>" alt="img">
+						<img src="<?= the_field('emblema_icon_header', 5) ?>" alt="img">
 					</div>
 				</div>
 
