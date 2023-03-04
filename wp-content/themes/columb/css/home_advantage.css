@@ -4,19 +4,16 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-top: 60px;
 }
-
 
 .adv-card {
   display: flex;
   flex-basis: 32%;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .adv-card-content {
-  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,9 +21,15 @@
   flex-wrap: nowrap;
 }
 
+.adv-card-content img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
 .adv-heading {
-  margin: 20px 0;
-  font-family: 'Roboto', serif;
+  margin: 40px 0 20px 0;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -36,7 +39,7 @@
 }
 
 .advantage-text {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -55,4 +58,3 @@
     flex-basis: 90%;
   }
 }
-
