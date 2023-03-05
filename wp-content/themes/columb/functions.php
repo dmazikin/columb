@@ -130,38 +130,33 @@ function columb_widgets_init()
 	);
 }
 add_action('widgets_init', 'columb_widgets_init');
-
-/**
- * Enqueue scripts and styles.
- */
-/* Регистрируем массив подключаемых стилей в хедер */
-add_action('wp_enqueue_scripts', 'register_style_header');
-
-function register_style_header()
-{
-	wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css');
-	wp_register_style('header', get_template_directory_uri() . '/css/header.css');
-	wp_register_style('header_search_menu', get_template_directory_uri() . '/css/header_search_menu.css');
-	wp_register_style('slider', get_template_directory_uri() . '/css/slider.css');
-	wp_register_style('home_about', get_template_directory_uri() . '/css/home_about.css');
-	wp_register_style('home_card', get_template_directory_uri() . '/css/home_card.css');
-	wp_register_style('home_transfer', get_template_directory_uri() . '/css/home_transfer.css');
-	wp_register_style('home_booking', get_template_directory_uri() . '/css/home_booking.css');
-	wp_register_style('home_service', get_template_directory_uri() . '/css/home_service.css');
-	wp_register_style('home_advantage', get_template_directory_uri() . '/css/home_advantage.css');
-	wp_register_style('home_review', get_template_directory_uri() . '/css/home_review.css');
-	wp_register_style('home_video_review', get_template_directory_uri() . '/css/home_video_review.css');
-	wp_register_style('popup', get_template_directory_uri() . '/css/popup.css');
-	wp_register_style('header_tour_menu', get_template_directory_uri() . '/css/header_tour_menu.css');
-	wp_register_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css');
-}
 /* Подключаем стили и скрпиты */
 add_action('wp_enqueue_scripts', 'columb_scripts');
 function columb_scripts()
 {
 	wp_enqueue_style('swiper-style', get_template_directory_uri() . '/css/swiper-bundle.min.css', array(), null);
-	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array('normalize', 'header', 'header_search_menu', 'slider', 'home_about', 'home_card', 'home_transfer', 'home_booking', 'home_service', 'home_advantage', 'home_review', 'home_video_review', 'popup', 'header_tour_menu'), null);
+	wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), null);
+	wp_enqueue_style('header', get_template_directory_uri() . '/css/header.css', array(), null);
+	wp_enqueue_style('header_search_menu', get_template_directory_uri() . '/css/header_search_menu.css', array(), null);
+	wp_enqueue_style('slider', get_template_directory_uri() . '/css/slider.css', array(), null);
+	wp_enqueue_style('home_about', get_template_directory_uri() . '/css/home_about.css', array(), null);
+	wp_enqueue_style('home_card', get_template_directory_uri() . '/css/home_card.css', array(), null);
+	wp_enqueue_style('home_transfer', get_template_directory_uri() . '/css/home_transfer.css', array(), null);
+	wp_enqueue_style('home_booking', get_template_directory_uri() . '/css/home_booking.css', array(), null);
+	wp_enqueue_style('home_service', get_template_directory_uri() . '/css/home_service.css', array(), null);
+	wp_enqueue_style('home_advantage', get_template_directory_uri() . '/css/home_advantage.css', array(), null);
+	wp_enqueue_style('home_review', get_template_directory_uri() . '/css/home_review.css', array(), null);
+	wp_enqueue_style('home_video_review', get_template_directory_uri() . '/css/home_video_review.css', array(), null);
+	wp_enqueue_style('header_tour_menu', get_template_directory_uri() . '/css/header_tour_menu.css', array(), null);
+	wp_enqueue_style('popup', get_template_directory_uri() . '/css/popup.css', array(), null);
+	wp_enqueue_style('about-main', get_template_directory_uri() . '/css/about/main.css', array(), null);
+	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array(), null);
+	wp_enqueue_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css', array(), null);
 	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
+	wp_enqueue_script('columb-popup', get_template_directory_uri() . '/js/popup.js', array(), null, true);
+	wp_enqueue_script('columb-burger-menu', get_template_directory_uri() . '/js/burger_menu_mobile.js', array(), null, true);
+	wp_enqueue_script('columb-header-search', get_template_directory_uri() . '/js/header_search_btn.js', array(), null, true);
+	wp_enqueue_script('columb-map', get_template_directory_uri() . '/js/about_map_popup.js', array(), null, true);
 	wp_enqueue_script('columb-slider', get_template_directory_uri() . '/js/slider_activate.js', array(), null, true);
 	wp_enqueue_script('columb-video-popup', get_template_directory_uri() . '/js/video_popup.js', array(), null, true);
 	wp_enqueue_script('jquery');
