@@ -8,7 +8,6 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-console.log(111);
 var perView = 6;
 var perBookingView = 3;
 if (window.matchMedia("(max-width: 1603px)").matches) {
