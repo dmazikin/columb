@@ -11,6 +11,80 @@
  */
 
 ?>
+<div class="footer">
+  <div class="footer-top container">
+    <a href="#" class="link-logo">
+      <div class="footer-logo">
+        <?php echo get_custom_logo() ?>
+      </div>
+    </a>
+    <div class="footer-menu">
+      <?
+      wp_nav_menu([
+        'theme_location'  => 'primary',
+        'container'       => false,
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
+        'depth'           => 1,
+      ]);
+      ?>
+    </div>
+    <div class="menu-button-mobile menu-footer-open">
+      <div class="line big"></div>
+      <div class="line small"></div>
+      <div class="line big"></div>
+
+      <div class="mobile-menu">
+        <?
+        wp_nav_menu([
+          'theme_location'  => 'primary',
+          'container'       => false,
+          'echo'            => true,
+          'fallback_cb'     => 'wp_page_menu',
+          'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
+          'depth'           => 1,
+        ]);
+        ?>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <div class="bottom-left">
+      <p class="footer-phone"><?= the_field('phone', 5) ?></p>
+      <div class="footer-our-partner">
+        <p class="">Наш партнер</p>
+        <img src="<?php echo the_field('footer_partner_img') ?>" alt="partner_logo" />
+      </div>
+      <div class="row rosturism">
+        <img src="<?php echo the_field('footer_ros_img') ?>" alt="rosturism" />
+        <p class="register-number"><?php echo the_field('footer_reestr') ?></p>
+      </div>
+      <div class="row footer-icons">
+        <img class="footer-ico" src="<?php echo the_field('vk_icon_header', 5) ?>" alt="" />
+        <img class="footer-ico" src="<?php echo the_field('telegram_icon_header', 5) ?>" alt="" />
+        <img class="footer-ico" src="<?php echo the_field('youtube_icon_header', 5) ?>" alt="" />
+        <img class="footer-ico" src="<?php echo the_field('wa_icon_header', 5) ?>" alt="" />
+      </div>
+      <p class="rights"><?php echo the_field('footer_cop') ?></p>
+    </div>
+    <div class="bottom-center">
+      <div class="footer-email">
+        <p>Почта: <span><?php echo the_field('footer_mail') ?></span></p>
+      </div>
+      <div class="footer-manager">
+        <p>Диспетчер: <span><?php echo the_field('footer_operator_tel') ?></span></p>
+      </div>
+      <img class="anchor" src="<?php echo the_field('footer_anchor_img') ?>" alt="anchor" />
+    </div>
+    <div class="bottom-right">
+      <div class="footer-world">
+        <img src="<?php echo the_field('footer_online_img') ?>" alt="img" />
+      </div>
+      <p>Сейчас на сайте 27 человек</p>
+    </div>
+  </div>
+</div>
 <div class="popup-screen popup-close-screen">
   <div class="popup-outer">
     <div class="popup-close"><img src="img/close_ico.png" alt="" /></div>
