@@ -166,7 +166,7 @@ get_header();
         ?>
           <div class="swiper-slide">
             <div class="booking-card">
-              <img src="<?php echo  $reservImg['url']; ?>" alt="<?php echo $reservImg['alt']; ?>" />
+              <img src="<?php echo  $reservImg; ?>" alt="Бронирование" />
               <p><?php echo $reservTitle; ?></p>
             </div>
           </div>
