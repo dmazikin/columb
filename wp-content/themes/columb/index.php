@@ -170,13 +170,12 @@ get_header();
               <p><?php echo $reservTitle; ?></p>
             </div>
           </div>
+        <?php endwhile; ?>
       </div>
-    <?php endwhile; ?>
+      <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
+      <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
     </div>
-    <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
-    <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
-</div>
-<?php endif; ?>
+  <?php endif; ?>
 </div>
 <div class="service container">
   <div class="head-text">
