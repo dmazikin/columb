@@ -166,16 +166,17 @@ get_header();
         ?>
           <div class="swiper-slide">
             <div class="booking-card">
-              <img src="<?php echo  $reservImg['url']; ?>" alt="" />
+              <img src="<?php echo  $reservImg['url']; ?>" alt="<?php echo $reservImg['alt']; ?>" />
               <p><?php echo $reservTitle; ?></p>
             </div>
           </div>
-        <?php endwhile; ?>
       </div>
-      <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
-      <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
+    <?php endwhile; ?>
     </div>
-  <?php endif; ?>
+    <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
+    <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
+</div>
+<?php endif; ?>
 </div>
 <div class="service container">
   <div class="head-text">
