@@ -13,41 +13,37 @@
 ?>
 <div class="footer">
   <div class="footer-top container">
-    <a href="#" class="link-logo">
-      <div class="footer-logo">
-        <?php echo get_custom_logo() ?>
-      </div>
-    </a>
-    <div class="footer-menu">
+    <div class="footer-logo">
+      <?php echo get_custom_logo() ?>
+    </div>
+    <nav id="footer-menu">
       <?
       wp_nav_menu([
         'theme_location'  => 'primary',
         'container'       => false,
         'echo'            => true,
         'fallback_cb'     => 'wp_page_menu',
-        'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
+        'items_wrap'      => '<ul class="footer-menu">%3$s</ul>',
         'depth'           => 1,
       ]);
       ?>
-    </div>
-    <div class="menu-button-mobile menu-footer-open">
-      <div class="line big"></div>
-      <div class="line small"></div>
-      <div class="line big"></div>
-
-      <div class="mobile-menu">
+      <div class="menu-button-mobile menu-footer-open">
+        <div class="line big"></div>
+        <div class="line small"></div>
+        <div class="line big"></div>
         <?
         wp_nav_menu([
           'theme_location'  => 'primary',
           'container'       => false,
           'echo'            => true,
           'fallback_cb'     => 'wp_page_menu',
-          'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
-          'depth'           => 1,
+          'items_wrap'      => '<ul class="mobile-menu">%3$s</ul>',
+          'depth'           => 0,
         ]);
         ?>
       </div>
-    </div>
+    </nav>
+
   </div>
   <div class="footer-bottom container">
     <div class="bottom-left">
