@@ -16,6 +16,7 @@ a {
 ul.header-menu {
   list-style: none;
   padding: 0;
+  position: relative;
 }
 
 .menu-item {
@@ -66,6 +67,43 @@ ul.header-menu {
 
 .link-logo {
   text-decoration: none;
+}
+
+.sub-menu {
+  width: 201px;
+  visibility: hidden;
+  position: absolute;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  top: -250px;
+  transition: top 0.3s ease-in-out;
+}
+
+.sub-menu .menu-item {
+  margin: 20px;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.menu-item:hover .sub-menu {
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  top: 53px;
+}
+
+nav.menu {
+  position: relative;
 }
 
 .container {
@@ -545,7 +583,7 @@ textarea {
   }
 }
 
-.mobile-menu {
+/* .mobile-menu {
   position: relative;
   width: 128px;
   background: #ffffff;
@@ -553,7 +591,7 @@ textarea {
   transition: all 0.3s;
   transform: scaleX(0);
   left: 40px;
-}
+} */
 
 .menu-button-mobile {
   cursor: pointer;
@@ -570,7 +608,13 @@ textarea {
 }
 
 @media (max-width: 748px) {
+  .mobile-menu {
+    padding: 0;
+  }
   .menu-button-mobile {
+    position: absolute;
+    top: 10px;
+    right: 0;
     display: flex;
     margin-right: 10px;
   }
@@ -578,11 +622,18 @@ textarea {
     height: 42px;
     width: 120px;
   }
-  .page-button > a {
+  .mobile-menu li > a {
     font-weight: 400;
     font-size: 13px;
     line-height: 13px;
     text-align: center;
+  }
+  .mobile-menu > .menu-item {
+    height: 42px;
+    width: 120px;
+  }
+  .mobile-menu > .ml-100 {
+    padding: 0;
   }
 }
 
