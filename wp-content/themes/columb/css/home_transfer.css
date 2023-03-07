@@ -45,11 +45,11 @@
 
 .transfer-card {
   margin: 20px 0;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 565px;
   max-width: 553px;
 }
 
