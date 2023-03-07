@@ -1,16 +1,11 @@
 .mobile-menu {
   position: relative;
   width: 128px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 0px 0px 15px 15px;
   transition: all 0.3s;
   transform: scaleX(0);
   left: 40px;
-}
-
-.menu-button-mobile {
-  cursor: pointer;
-  display: none;
 }
 
 .mobile-menu.active {
@@ -20,24 +15,4 @@
 
 .line {
   margin: 2px 0;
-}
-
-
-@media (max-width: 748px) {
-  .menu-button-mobile {
-    display: flex;
-    margin-right: 10px;
-  }
-
-  .page-button {
-    height: 42px;
-    width: 120px;
-  }
-
-  .page-button > a {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 13px;
-    text-align: center;
-  }
 }
