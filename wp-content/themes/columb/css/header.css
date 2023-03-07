@@ -36,7 +36,7 @@
   left: calc(50% - 286px / 2);
 }
 
-.header-logo > img {
+.custom-logo-link > img {
   width: 286px;
 }
 
@@ -260,8 +260,10 @@
   .header-logo {
     justify-content: center;
   }
-  .header-logo > img {
+  .custom-logo-link > img {
     width: 156px;
+    object-fit: contain;
+    height: auto;
   }
   .vk,
   .telegram,
