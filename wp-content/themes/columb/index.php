@@ -164,12 +164,11 @@ get_header();
           $reservTitle = get_sub_field('reserv_slider_title', 5);
 
         ?>
-          <div class="swiper-slide">
-            <div class="booking-card">
-              <img src="<?php echo  $reservImg['url']; ?>" alt="<?php echo $reservImg['alt']; ?>" />
-              <p><?php echo $reservTitle; ?></p>
-            </div>
+          <div class="booking-card">
+            <img src="<?php echo  $reservImg['url']; ?>" alt="<?php echo $reservImg['alt']; ?>" />
+            <p><?php echo $reservTitle; ?></p>
           </div>
+
         <?php endwhile; ?>
       </div>
       <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
