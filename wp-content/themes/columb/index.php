@@ -84,15 +84,13 @@ get_header();
           <?php echo the_post_thumbnail(); ?>
         </div>
         <h2 class="card-title">
-          <a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
-          </a>
+          <?php the_title(); ?>
         </h2>
         <?php the_content(); ?>
-        <p class="price">
-          <?php woocommerce_template_loop_price(); ?>
-        </p>
-        <?php woocommerce_template_loop_add_to_cart(); ?>
+        <button class="card-button">
+          <?php woocommerce_template_loop_add_to_cart(); ?>
+        </button>
+
       </div>
 
     <?php endwhile;
