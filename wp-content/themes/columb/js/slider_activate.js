@@ -31,7 +31,6 @@ var videoSwiper = new Swiper(".videoSwiper", {
 });
 
 var bookingSwiper = new Swiper(".bookingSwiper", {
-  autoHeight: true,
   slidesPerView: perBookingView,
   spaceBetween: 35,
   slidesPerGroup: perBookingView,
