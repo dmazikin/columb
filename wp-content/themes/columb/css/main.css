@@ -90,6 +90,11 @@ ul.header-menu {
   cursor: pointer;
 }
 
+.card-button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .right-button:active,
 .card-button:active {
   background: #393185;
