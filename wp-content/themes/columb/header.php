@@ -119,20 +119,36 @@
 				<?php echo get_custom_logo() ?>
 				<p>c 2000 года</p>
 			</div>
-			<?
-			wp_nav_menu([
-				'theme_location'  => 'primary',
-				'container'       => false,
-				'echo'            => true,
-				'fallback_cb'     => 'wp_page_menu',
-				'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
-				'depth'           => 1,
-			]);
-			?>
-			<div class="menu-button-mobile">
-				<div class="line big"></div>
-				<div class="line small"></div>
-				<div class="line big"></div>
+			<nav class="menu">
+				<?
+				wp_nav_menu([
+					'theme_location'  => 'primary',
+					'container'       => false,
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'items_wrap'      => '<ul class="header-menu">%3$s</ul>',
+					'depth'           => 0,
+				]);
+				?>
+				<div class="menu-button-mobile">
+					<div class="line big"></div>
+					<div class="line small"></div>
+					<div class="line big"></div>
+					<?
+					wp_nav_menu([
+						'theme_location'  => 'primary',
+						'container'       => false,
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'items_wrap'      => '<ul class="mobile-menu">%3$s</ul>',
+						'depth'           => 0,
+					]);
+					?>
+				</div>
+			</nav>
+
+			<!-- 
+				
 
 				<div class="mobile-menu">
 
@@ -174,7 +190,7 @@
 						<div class="page-marker"></div>
 					</div>
 				</div>
-			</div>
+			 -->
 		</div>
 
 	</div>
