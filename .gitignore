@@ -21,6 +21,7 @@ wp-admin/
 wp-includes/
 
 # ignore log files and databases
+license.txt
 *.log
 *.sql
 *.sqlite
