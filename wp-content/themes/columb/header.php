@@ -71,7 +71,7 @@
 								</svg>
 							</button>
 							<div class="search-close">
-								<img src="img/close_ico_silver.png" alt="Close">
+								<img src="<?php echo get_template_directory_uri() . '/img/close_ico_silver.png'; ?>" alt="Close">
 							</div>
 						</div>
 					</div>
@@ -146,51 +146,6 @@
 					?>
 				</div>
 			</nav>
-
-			<!-- 
-				
-
-				<div class="mobile-menu">
-
-					<div class="page-button active left">
-						<a href="#">Главная</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button left tour-menu-open">
-						<a href="#">Все экскурсии </a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button left">
-						<a href="#">VIP - обслуживание</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button left">
-						<a href="#">MICE / Event - обслуживание</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="head-spacer-center"></div>
-					<div class="page-button">
-						<a href="#">Трансфер</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button">
-						<a href="#">Размещение</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button">
-						<a href="#">О компании</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button">
-						<a href="#">Новости / Анонсы</a>
-						<div class="page-marker"></div>
-					</div>
-					<div class="page-button">
-						<a href="#">Контакты</a>
-						<div class="page-marker"></div>
-					</div>
-				</div>
-			 -->
 		</div>
 
 	</div>
