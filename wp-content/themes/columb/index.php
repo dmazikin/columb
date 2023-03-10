@@ -67,35 +67,7 @@ get_header();
     </div>
     <button class="right-button more-button">Показать больше</button>
   </div>
-  <div class="card-container">
-    <?php
-    $loop = new WP_Query(array(
-      'product_cat' => 'excursion',
-      'post_type' => 'product',
-      'posts_per_page' => 12,
-      'orderby' => 'menu_order',
-      'order' => 'ASC',
-    ));
-
-    while ($loop->have_posts()) : $loop->the_post(); ?>
-
-      <div class="card">
-        <div class="card-top">
-          <?php echo the_post_thumbnail(); ?>
-        </div>
-        <h2 class="card-title">
-          <?php the_title(); ?>
-        </h2>
-        <?php the_content(); ?>
-        <button class="card-button">
-          <?php woocommerce_template_loop_add_to_cart(); ?>
-        </button>
-
-      </div>
-
-    <?php endwhile;
-    wp_reset_postdata(); ?>
-  </div>
+  <?php echo do_shortcode("[products category='excursion']"); ?>
 </div>
 <div class="transfer container">
   <div class="head-text">
