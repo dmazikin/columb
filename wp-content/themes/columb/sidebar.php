@@ -1,24 +1,10 @@
-<?php dynamic_sidebar('filter'); ?>
-<div class="container tours-chooser">
-  <div class="tour-btn active">
-    <p>Красная Поляна — Русская Швейцария<span> (плановые)</span></p>
+<?php $product_categories = get_terms(array('taxonomy' => 'product_cat', 'hide_empty' => true)); ?>
+<?php if ($product_categories) : ?>
+  <div class="container tours-chooser">
+    <?php foreach ($product_categories as $category) : ?>
+      <div class="tour-btn">
+        <p><a href="<?php echo get_term_link($category); ?>"><?php echo $category->name ?></a></p>
+      </div>
+    <?php endforeach; ?>
   </div>
-  <div class="tour-btn">
-    <p>Чарующая Абхазия<span> (плановые)</span></p>
-  </div>
-  <div class="tour-btn">
-    <p>Обзорные и панорамные экскурсии<span> (плановые)</span></p>
-  </div>
-  <div class="tour-btn">
-    <p>Природные экскурсии</p>
-  </div>
-  <div class="tour-btn">
-    <p>Тематические экскурсии</p>
-  </div>
-  <div class="tour-btn">
-    <p>Экскурсии для всей семьи</p>
-  </div>
-  <div class="tour-btn">
-    <p>Активный отдых</p>
-  </div>
-</div>
+<?php endif; ?>
