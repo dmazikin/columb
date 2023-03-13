@@ -28,16 +28,16 @@ $product_published = $product->get_date_created(); //$product_published->date
 ?>
 <div <?php wc_product_class('card', $product); ?>>
 	<div class="card-top">
-		<?php echo $product->get_image('100%'); ?>
-		<?php if ($product->is_featured()) : ?>
-			<div class="marker yellow">
-				<img src="<?php echo get_template_directory_uri() . '/img/marker_yellow.png'; ?>" alt="" />
-				<p>Хит продаж</p>
-			</div>
-		<?php elseif (strtotime($product_published->date) < (time() - 86400 * 5)) : ?>
+		<?php echo $product->get_image('thumbn'); ?>
+		<?php if (strtotime($product->get_date_created()) > time() - (86400 * 5)) : ?>
 			<div class="marker red">
 				<img src="<?php echo get_template_directory_uri() . '/img/marker_red.png' ?>" />
 				<p>Новинка</p>
+			</div>
+		<?php elseif ($product->is_featured()) : ?>
+			<div class="marker yellow">
+				<img src="<?php echo get_template_directory_uri() . '/img/marker_yellow.png'; ?>" alt="" />
+				<p>Хит продаж</p>
 			</div>
 		<?php endif; ?>
 	</div>
