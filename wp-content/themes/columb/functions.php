@@ -209,14 +209,7 @@ function tb_woo_custom_cart_button_text()
 {
 	return __('Забронировать', 'woocommerce');
 }
-register_sidebar(array(
-	'id' => 'filter',
-	'name' => "Сайдбар фильтров товара",
-	'before_widget' => '<div class="container tours-chooser">',
-	'after_widget' => '</div>',
-	'before_title' => '<div class="tour-btn">',
-	'after_title' => '</div>'
-));
+
 //Хлебные крошки 
 add_filter('woocommerce_breadcrumb_defaults', function () {
 	return array(
