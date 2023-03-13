@@ -110,26 +110,6 @@ function columb_content_width()
 }
 add_action('after_setup_theme', 'columb_content_width', 0);
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function columb_widgets_init()
-{
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Sidebar', 'columb'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'columb'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action('widgets_init', 'columb_widgets_init');
 /* Подключаем стили и скрпиты */
 add_action('wp_enqueue_scripts', 'columb_scripts');
 function columb_scripts()
@@ -148,6 +128,8 @@ function columb_scripts()
 	wp_enqueue_style('home_review', get_template_directory_uri() . '/css/home_review.css', array(), null);
 	wp_enqueue_style('home_video_review', get_template_directory_uri() . '/css/home_video_review.css', array(), null);
 	wp_enqueue_style('header_tour_menu', get_template_directory_uri() . '/css/header_tour_menu.css', array(), null);
+	wp_enqueue_style('all_tours', get_template_directory_uri() . '/css/all_tours/main.css', array(), null);
+	wp_enqueue_style('breadcrumbs', get_template_directory_uri() . '/css/breadcrumbs.css', array(), null);
 	wp_enqueue_style('popup', get_template_directory_uri() . '/css/popup.css', array(), null);
 	wp_enqueue_style('footer', get_template_directory_uri() . '/css/footer.css', array(), null);
 	wp_enqueue_style('about-main', get_template_directory_uri() . '/css/about/main.css', array(), null);
@@ -227,3 +209,22 @@ function tb_woo_custom_cart_button_text()
 {
 	return __('Забронировать', 'woocommerce');
 }
+register_sidebar(array(
+	'id' => 'filter',
+	'name' => "Сайдбар фильтров товара",
+	'before_widget' => '<div class="container tours-chooser">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="tour-btn">',
+	'after_title' => '</div>'
+));
+//Хлебные крошки 
+add_filter('woocommerce_breadcrumb_defaults', function () {
+	return array(
+		'delimiter' => '',
+		'wrap_before' => '<div class="breadcrumbs-container container"><div class="breadcrumbs ">',
+		'wrap_after' => '</div></div>',
+		'before' => '<a class="active">',
+		'after' => '</a>',
+		'home' => 'Главная'
+	);
+});
