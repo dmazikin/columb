@@ -15,9 +15,7 @@
 
 get_header();
 ?>
-<div class="call-order popup-open">
-  <p>Заказать обратный звонок</p>
-</div>
+
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
     <?php

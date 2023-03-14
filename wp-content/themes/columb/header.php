@@ -149,3 +149,6 @@
 		</div>
 
 	</div>
+	<div class="call-order popup-open">
+		<p>Заказать обратный звонок</p>
+	</div>
