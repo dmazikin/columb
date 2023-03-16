@@ -25,7 +25,12 @@ if (empty($product) || !$product->is_visible()) {
 	return;
 }
 $product_published = $product->get_date_created(); //$product_published->date
+
+/* echo '<pre>';
+print_r($product_categories);
+echo '</pre>'; */
 ?>
+
 <div <?php wc_product_class('card', $product); ?>>
 	<div class="card-top">
 		<?php echo $product->get_image('thumbn'); ?>
