@@ -133,6 +133,7 @@ function columb_scripts()
 	wp_enqueue_style('popup', get_template_directory_uri() . '/css/popup.css', array(), null);
 	wp_enqueue_style('footer', get_template_directory_uri() . '/css/footer.css', array(), null);
 	wp_enqueue_style('about-main', get_template_directory_uri() . '/css/about/main.css', array(), null);
+	wp_enqueue_style('transfer', get_template_directory_uri() . '/css/transfer/main.css', array(), null);
 	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array(), null);
 	wp_enqueue_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css', array(), null);
 	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
