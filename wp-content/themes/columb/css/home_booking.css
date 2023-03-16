@@ -9,12 +9,10 @@
   background: #2d9cdb;
   border-radius: 15px;
   padding-bottom: 9px;
-  position: relative;
 }
 
-.booking-card-wrapper > .card-button {
-  position: absolute;
-  top: 60%;
+.class-auto > .card-button {
+  margin: 0 auto;
 }
 
 .booking-card {

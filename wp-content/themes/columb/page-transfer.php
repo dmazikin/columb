@@ -28,110 +28,82 @@ get_header();
 </div>
 
 <?php
-$args = array(
-  'taxonomy' => 'product_cat',
+$transfer = new WP_Query(array(
+  'product_cat' => 'transfer',
   'post_type' => 'product',
-  'hide_empty' => false,
-  'parent' => 38
-);
-$product_categories = get_terms($args);
-
-$count = count($product_categories);
+  'posts_per_page' => -1,
+  'orderby' => 'menu_order',
+  'order' => 'ASC',
+));
 ?>
-
-<?php if ($count > 0) : ?>
-  <?php foreach ($product_categories as $product_category) :
-    $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
-  ?>
-    <div class="class-auto container">
-      <?php
-      /* echo '<pre>';
-      print_r($product_categories);
-      echo '</pre>'; */
-      ?>
-      <h2 class="head-text title"><?php echo $product_category->name; ?></h2>
-      <div class="swiper bookingSwiper">
-        <?php
-        $args = array(
-          'posts_per_page' => -1,
-          'tax_query' => array(
-            'relation' => 'AND',
-            array(
-              'taxonomy' => 'product_cat',
-              'field' => 'slug',
-              // 'terms' => 'white-wines'
-              'terms' => $product_category->slug
-            )
-          ),
-          'post_type' => 'product',
-          'orderby' => 'title,'
-        );
-        $products = new WP_Query($args);
-        ?>
-        <div class="swiper-wrapper">
-          <?php while ($products->have_posts()) : $products->the_post(); ?>
-            <div class="swiper-slide">
-              <div class="booking-card-wrapper">
-                <div class="booking-card">
-                  <img src="<?php echo the_post_thumbnail_url(); ?>" />
-                  <p><?php echo the_title(); ?></p>
-                </div>
-                <button class="card-button">
-                  <a href="<?php echo $product->add_to_cart_url(); ?>"><?php echo $product->add_to_cart_text(); ?></a>
-                </button>
+<?php while ($transfer->have_posts()) : $transfer->the_post(); ?>
+  <div class="class-auto container">
+    <h2 class="head-text title"><?php the_title(); ?></h2>
+    <button class="card-button">
+      <a href="<?php echo $product->add_to_cart_url(); ?>"><?php echo $product->add_to_cart_text(); ?></a>
+    </button>
+    <div class="swiper bookingSwiper">
+      <div class="swiper-wrapper">
+        <?php $rows = get_field('repeats_gallery_transfer'); ?>
+        <?php foreach ($rows as $row) : ?>
+          <div class="swiper-slide">
+            <div class="booking-card-wrapper">
+              <div class="booking-card">
+                <img src="<?php echo $row['repeats_gallery_transfer_img'] ?>" />
+                <p><?php echo $row['repeats_gallery_transfer_name'] ?></p>
               </div>
             </div>
-          <?php endwhile; ?>
-        </div>
-        <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
-        <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
+          </div>
+        <?php endforeach; ?>
       </div>
-
+      <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
+      <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
     </div>
-  <?php endforeach; ?>
-<?php endif; ?>
-<div class="transfer-info-service container">
-  <h2 class="head-text title">Об услуге</h2>
-  <div class="transfer-info-service-text-wrapper">
-    <div class="transfer-info-service-left">
-      <p class="text">Для индивидуального и семейного трансфера мы предлагаем:</p>
-      <ul class="text-accented">
-        <li>Легковые авто: класса комфорт, комфорт+, бизнес-класса;</li>
-        <li>Минивены: Hyundai Starex, Mercedes Vito, Mercedes V-класса</li>
-      </ul>
-      <p class="text">Для группового трансфера участников мероприятий предлагаем:</p>
-      <ul class="text-accented">
-        <li>Микроавтобусы (16-19 мест): Mercedes-Tourist, Mercedes-VIP</li>
-        <li>Автобусы различной вместимости (от 32 до 60 мест): марок Higer,</li>
-        <li>King Long, Scania, Mercedes, Man.</li>
-      </ul>
-    </div>
-    <div class="transfer-info-service-right">
-      <p class="text">Наши правила оказания услуги «трансфер»:</p>
-      <ul class="text-accented">
-        <li>
-          Вы отправляете заявку с точными полётными данными, указывая количество гостей, наличие детей и их возраст
-          для безопасного передвижения по городу, особенности багажа / габаритность, конечный пункт поездки,
-          контактный телефон;
-        </li>
-        <li>Cогласовываете вид и класс авто, оплачиваете стоимость трансфера;</li>
-        <li>
-          Диспетчер подтверждает забронированную заявку, накануне информирует гостей о номере авто и водителя,
-          уточняется место посадки в авто;
-        </li>
-        <li>
-          По прилету / приезде после получения багажа гости сообщают о своём выходе на посадку в авто водителю;
-        </li>
-      </ul>
+  <?php endwhile;
+wp_reset_postdata(); ?>
+  </div>
+  <div class="transfer-info-service container">
+    <h2 class="head-text title">Об услуге</h2>
+    <div class="transfer-info-service-text-wrapper">
+      <div class="transfer-info-service-left">
+        <p class="text">Для индивидуального и семейного трансфера мы предлагаем:</p>
+        <ul class="text-accented">
+          <li>Легковые авто: класса комфорт, комфорт+, бизнес-класса;</li>
+          <li>Минивены: Hyundai Starex, Mercedes Vito, Mercedes V-класса</li>
+        </ul>
+        <p class="text">Для группового трансфера участников мероприятий предлагаем:</p>
+        <ul class="text-accented">
+          <li>Микроавтобусы (16-19 мест): Mercedes-Tourist, Mercedes-VIP</li>
+          <li>Автобусы различной вместимости (от 32 до 60 мест): марок Higer,</li>
+          <li>King Long, Scania, Mercedes, Man.</li>
+        </ul>
+      </div>
+      <div class="transfer-info-service-right">
+        <p class="text">Наши правила оказания услуги «трансфер»:</p>
+        <ul class="text-accented">
+          <li>
+            Вы отправляете заявку с точными полётными данными, указывая количество гостей, наличие детей и их возраст
+            для безопасного передвижения по городу, особенности багажа / габаритность, конечный пункт поездки,
+            контактный телефон;
+          </li>
+          <li>Cогласовываете вид и класс авто, оплачиваете стоимость трансфера;</li>
+          <li>
+            Диспетчер подтверждает забронированную заявку, накануне информирует гостей о номере авто и водителя,
+            уточняется место посадки в авто;
+          </li>
+          <li>
+            По прилету / приезде после получения багажа гости сообщают о своём выходе на посадку в авто водителю;
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div class="transfer-info-sign container">
-  <p class="text-accented">
-    Внимание: встреча с табличкой оплачивается дополнительно; стоимость парковки в случае ожидания в аэропорту не
-    входит в стоимость трансфера.
-  </p>
-</div>
-<?php
-get_footer();
-?>
+  <div class="transfer-info-sign container">
+    <p class="text-accented">
+      Внимание: встреча с табличкой оплачивается дополнительно; стоимость парковки в случае ожидания в аэропорту не
+      входит в стоимость трансфера.
+    </p>
+  </div>
+  <?php
+  get_footer();
+  ?>
