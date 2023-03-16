@@ -78,7 +78,7 @@
 }
 
 .bookingSwiper > .swiper-wrapper > .swiper-slide {
-  max-height: 407px;
+  height: auto;
 }
 
 .videoSwiper > .swiper-wrapper > .swiper-slide {
