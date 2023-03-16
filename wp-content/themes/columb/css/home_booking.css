@@ -1,17 +1,21 @@
 .booking-card-wrapper {
   width: 100%;
   height: 100%;
-  max-height: 407px;
   max-width: 501px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: #2D9CDB;
+  background: #2d9cdb;
   border-radius: 15px;
   padding-bottom: 9px;
+  position: relative;
 }
 
+.booking-card-wrapper > .card-button {
+  position: absolute;
+  top: 60%;
+}
 
 .booking-card {
   width: 100%;
@@ -20,11 +24,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #2D9CDB;
+  background: #2d9cdb;
   border-radius: 15px;
   padding-bottom: 9px;
 }
-
 
 .booking-card > img {
   height: 100%;
@@ -36,17 +39,16 @@
 .booking-card > p {
   position: absolute;
   top: calc(50% - 40px / 2);
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 69px;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0px 4px 4px #000000;
 }
-
 
 @media (max-width: 1603px) {
   .booking-card > p {
@@ -60,13 +62,9 @@
   .booking-card {
     padding-bottom: 5px;
   }
-
   .booking-card > p {
     line-height: 34px;
     font-size: 20px;
     top: calc(50% - 20px / 2);
   }
 }
-
-
-
