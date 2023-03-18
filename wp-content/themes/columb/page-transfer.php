@@ -40,7 +40,7 @@ $transfer = new WP_Query(array(
   <div class="class-auto container">
     <h2 class="head-text title"><?php the_title(); ?></h2>
     <button class="card-button">
-      <a href="<?php echo $product->add_to_cart_url(); ?>"><?php echo $product->add_to_cart_text(); ?></a>
+      <?php woocommerce_template_loop_add_to_cart(); ?>
     </button>
     <div class="swiper bookingSwiper">
       <div class="swiper-wrapper">

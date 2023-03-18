@@ -117,10 +117,11 @@ nav.menu {
 .card-button {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   text-decoration: none;
   width: 175px;
-  height: 44px;
+  min-height: 44px;
   background: linear-gradient(180deg, #0c669a 44.27%, #34b1f9 100%);
   border: 1px solid #0c669a;
   border-radius: 15px;
@@ -129,8 +130,14 @@ nav.menu {
 }
 
 .card-button a {
+  display: block;
   text-decoration: none;
   color: #ffffff;
+}
+
+.added_to_cart {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .right-button:active,

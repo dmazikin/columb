@@ -51,6 +51,6 @@ echo '</pre>'; */
 		<?php echo $product->get_description(); ?>
 	</p>
 	<button class="card-button">
-		<a href="<?php echo $product->add_to_cart_url(); ?>"><?php echo $product->add_to_cart_text(); ?></a>
+		<?php woocommerce_template_loop_add_to_cart(); ?>
 	</button>
 </div>
