@@ -135,6 +135,7 @@ function columb_scripts()
 	wp_enqueue_style('about-main', get_template_directory_uri() . '/css/about/main.css', array(), null);
 	wp_enqueue_style('transfer', get_template_directory_uri() . '/css/transfer/main.css', array(), null);
 	wp_enqueue_style('locations', get_template_directory_uri() . '/css/razmeshenie/main.css', array(), null);
+	wp_enqueue_style('o-company', get_template_directory_uri() . '/css/o_kompanii/main.css', array(), null);
 	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array(), null);
 	wp_enqueue_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css', array(), null);
 	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);

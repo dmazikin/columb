@@ -31,8 +31,9 @@ var videoSwiper = new Swiper(".videoSwiper", {
 });
 var locationSwiper = new Swiper(".hotelSwiper", {
   slidesPerView: 3,
-  spaceBetween: 30,
   loop: true,
+  slidesPerGroup: 3,
+  spaceBetween: 30,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -48,6 +49,26 @@ var bookingSwiper = new Swiper(".bookingSwiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+});
+var docSwiper = new Swiper(".docSwiper", {
+  slidesPerView: 4,
+  slidesPerGroup: 1,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+      slidesPerGroup: 1,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
   },
 });
 
