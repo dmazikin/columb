@@ -75,7 +75,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="cart-ico active">
+					<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="cart-ico active">
 						<svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="transform: scale(2.2);">
 							<g id="Shopping_Cart">
 								<g>
@@ -94,16 +94,15 @@
 								</g>
 							</g>
 							<circle cx="70" cy="34" r="11" />
-							<p>2</p>
+							<p><?php echo WC()->cart->get_cart_contents_count() ?></p>
 						</svg>
-
-					</div>
-					<div class="exit-ico">
+					</a>
+					<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="exit-ico">
 						<svg class="svg svg-exit" width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect x="6" y="1" width="15" height="26" stroke="#2D9CDB" stroke-width="2" />
 							<path d="M17.7071 14.7071C18.0976 14.3166 18.0976 13.6834 17.7071 13.2929L11.3431 6.92893C10.9526 6.53841 10.3195 6.53841 9.92893 6.92893C9.53841 7.31946 9.53841 7.95262 9.92893 8.34314L15.5858 14L9.92893 19.6569C9.53841 20.0474 9.53841 20.6805 9.92893 21.0711C10.3195 21.4616 10.9526 21.4616 11.3431 21.0711L17.7071 14.7071ZM8.74228e-08 15L17 15L17 13L-8.74228e-08 13L8.74228e-08 15Z" fill="#2D9CDB" />
 						</svg>
-					</div>
+					</a>
 
 				</div>
 				<div class="header-language">

@@ -142,7 +142,7 @@
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
-  right: -5px;
+  right: -3px;
   top: -3px;
 }
 
@@ -291,6 +291,10 @@
   .lang-text {
     font-size: 14px;
   }
+}
+
+.wc-block-mini-cart__amount {
+  display: none;
 }
 
 @media (max-width: 748px) {
