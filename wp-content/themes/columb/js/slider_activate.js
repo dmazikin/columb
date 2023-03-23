@@ -38,6 +38,17 @@ var locationSwiper = new Swiper(".hotelSwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    575: {
+      slidesPerView: 2,
+    },
+    875: {
+      slidesPerView: 3,
+    },
+  },
 });
 
 var bookingSwiper = new Swiper(".bookingSwiper", {
