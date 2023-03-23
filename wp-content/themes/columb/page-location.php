@@ -22,7 +22,7 @@ get_header();
   <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
 </div>
 <?php woocommerce_breadcrumb(); ?>
-<div class="hotels-info container">
+<div class="container">
   <h2 class="head-text title"><?php the_title(); ?></h2>
   <?php the_content(); ?>
   <?php
