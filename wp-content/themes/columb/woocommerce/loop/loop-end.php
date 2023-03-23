@@ -21,4 +21,5 @@ if (!defined('ABSPATH')) {
 }
 ?>
 </div>
+<?php the_posts_pagination();?>
 </div>
