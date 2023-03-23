@@ -136,6 +136,7 @@ function columb_scripts()
 	wp_enqueue_style('about-main', get_template_directory_uri() . '/css/about/main.css', array(), null);
 	wp_enqueue_style('news', get_template_directory_uri() . '/css/news/main.css', array(), null);
 	wp_enqueue_style('transfer', get_template_directory_uri() . '/css/transfer/main.css', array(), null);
+	wp_enqueue_style('excursion_category', get_template_directory_uri() . '/css/excursion_category/main.css', array(), null);
 	wp_enqueue_style('locations', get_template_directory_uri() . '/css/razmeshenie/main.css', array(), null);
 	wp_enqueue_style('o-company', get_template_directory_uri() . '/css/o_kompanii/main.css', array(), null);
 	wp_enqueue_style('cart', get_template_directory_uri() . '/css/cart/main.css', array(), null);
