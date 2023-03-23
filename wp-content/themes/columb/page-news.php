@@ -41,9 +41,8 @@ get_header();
           </div>
           <div class="news-card-title"> <?php the_title(); ?></div>
           <div class="app-divider"></div>
-          <p class="text bold text-center"><?php the_date(); ?></p>
+          <p class="text bold text-center"><?php echo get_the_date(); ?></p>
           <p class="text"><?php the_content(); ?></p>
-          <button class="card-button">Подробнее</button>
         </div>
       </div>
     <?php
