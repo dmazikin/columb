@@ -32,7 +32,7 @@ echo '</pre>'; */
 ?>
 
 <div <?php wc_product_class('card', $product); ?>>
-	<a href="<?php echo get_permalink();?>" class="card-top">
+	<div class="card-top">
 		<?php echo $product->get_image('thumbn'); ?>
 		<?php if (strtotime($product->get_date_created()) > time() - (86400 * 5)) : ?>
 			<div class="marker red">
@@ -45,10 +45,10 @@ echo '</pre>'; */
 				<p>Хит продаж</p>
 			</div>
 		<?php endif; ?>
-	</a>
+	</div>
 	<h2 class="card-title"><?php echo $product->get_title(); ?></h2>
 	<p class="card-text">
-		<?php echo $product->get_description(); ?>
+		<?php echo $product->get_short_description(); ?>
 	</p>
 	<button class="card-button">
 		<?php woocommerce_template_loop_add_to_cart(); ?>
