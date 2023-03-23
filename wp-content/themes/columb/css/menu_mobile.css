@@ -16,3 +16,9 @@
 .line {
   margin: 2px 0;
 }
+
+@media (max-width: 748px) {
+  .sub-menu {
+    right: 120px;
+  }
+}
