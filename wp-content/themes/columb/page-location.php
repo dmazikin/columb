@@ -22,7 +22,6 @@ get_header();
   <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
 </div>
 <?php woocommerce_breadcrumb(); ?>
-<div class="container">
   <h2 class="head-text title"><?php the_title(); ?></h2>
   <?php the_content(); ?>
   <?php
@@ -45,58 +44,60 @@ get_header();
       print_r($product_categories);
       echo '</pre>'; */
       ?>
-      <h2 class="head-text title"><?php echo $product_category->name; ?></h2>
-      <div class="swiper hotelSwiper">
-        <?php
-        $args = array(
-          'posts_per_page' => -1,
-          'tax_query' => array(
-            'relation' => 'AND',
-            array(
-              'taxonomy' => 'product_cat',
-              'field' => 'slug',
-              // 'terms' => 'white-wines'
-              'terms' => $product_category->slug
-            )
-          ),
-          'post_type' => 'product',
-          'orderby' => 'title,'
-        );
-        $products = new WP_Query($args);
-        ?>
-        <div class="swiper-wrapper">
-          <?php while ($products->have_posts()) : $products->the_post(); ?>
-            <div class="swiper-slide">
-              <div class="hotel-card-wrapper">
-                <div class="hotel-card-img">
-                  <img src="<?php echo the_post_thumbnail_url(); ?>" />
-                </div>
-                <div class="hotel-card-title"><?php echo the_title(); ?></div>
-                <div class="hotel-card-text text">
-                  <?php echo $product->get_description(); ?>
-                </div>
-                <button class="card-button">
-                  <?php woocommerce_template_loop_add_to_cart(); ?>
-                </button>
-              </div>
-            </div>
-          <?php endwhile; ?>
-        </div>
-        <?php while ($products->have_posts()) : $products->the_post(); ?>
-          <div class="hotel-desc container">
+      
+      <div class="container">
+        <h2 class="head-text title"><?php echo $product_category->name; ?></h2>
+          <div class="swiper hotelSwiper">
             <?php
-            $value = the_field("location-hotel-desc");
-            echo $value;
+            $args = array(
+              'posts_per_page' => -1,
+              'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                  'taxonomy' => 'product_cat',
+                  'field' => 'slug',
+                  // 'terms' => 'white-wines'
+                  'terms' => $product_category->slug
+                )
+              ),
+              'post_type' => 'product',
+              'orderby' => 'title,'
+            );
+            $products = new WP_Query($args);
             ?>
+            <div class="swiper-wrapper">
+              <?php while ($products->have_posts()) : $products->the_post(); ?>
+                <div class="swiper-slide">
+                  <div class="hotel-card-wrapper">
+                    <div class="hotel-card-img">
+                      <img src="<?php echo the_post_thumbnail_url(); ?>" />
+                    </div>
+                    <div class="hotel-card-title"><?php echo the_title(); ?></div>
+                    <div class="hotel-card-text text">
+                      <?php echo $product->get_description(); ?>
+                    </div>
+                    <button class="card-button">
+                      <?php woocommerce_template_loop_add_to_cart(); ?>
+                    </button>
+                  </div>
+                </div>
+              <?php endwhile; ?>
+            </div>
+            <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
+            <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
           </div>
-        <?php endwhile; ?>
-        <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .  '/img/right_button_slide.png' ?>" alt="arrow right" /></div>
-        <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() . '/img/left_button_slide.png' ?>" alt="arrow left" /></div>
+          <?php while ($products->have_posts()) : $products->the_post(); ?>
+              <div class="hotel-desc">
+                <?php
+                $value = the_field("location-hotel-desc",$product->get_id());
+                echo $value;
+                ?>
+              </div>
+            <?php endwhile; ?>
       </div>
     <?php endforeach; ?>
   <?php endif; ?>
 
-</div>
 <?php
 get_footer();
 ?>
