@@ -1,7 +1,7 @@
 .news-cards {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -22,6 +22,17 @@
   align-items: center;
 }
 
+.news-card-content > p {
+  display: block;
+  margin-block-start: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 27px;
+}
+
 .news-card-img {
   width: 100%;
   object-fit: cover;
@@ -36,7 +47,7 @@
 }
 
 .news-card-title {
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -46,10 +57,8 @@
   text-align: center;
 }
 
-
 @media (max-width: 1100px) {
   .news-card {
     flex-basis: 90%;
   }
-
 }
