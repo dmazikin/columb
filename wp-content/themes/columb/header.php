@@ -93,8 +93,10 @@
 			l0.445-4h5.191l-0.889,4H58.329z" />
 								</g>
 							</g>
+							<?php if(WC()->cart->get_cart_contents_count() > 0):?>
 							<circle cx="70" cy="34" r="11" />
 							<p><?php echo WC()->cart->get_cart_contents_count() ?></p>
+							<?php endif;?>
 						</svg>
 					</a>
 					<a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="exit-ico">
