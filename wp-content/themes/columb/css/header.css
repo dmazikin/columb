@@ -227,6 +227,14 @@
 }
 
 @media (max-width: 1603px) {
+  .header-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   .cart-ico > p {
     font-size: 10px;
     line-height: 14px;
@@ -240,6 +248,9 @@
   }
   .header-logo {
     position: unset;
+  }
+  nav.menu {
+    width: 100%;
   }
   .header-bottom {
     margin-left: 15px;
@@ -294,9 +305,6 @@
 
 .wc-block-mini-cart__amount {
   display: none;
-}
-
-@media (max-width: 1300px) {
 }
 
 @media (max-width: 748px) {

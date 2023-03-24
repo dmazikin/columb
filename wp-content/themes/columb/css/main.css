@@ -349,6 +349,18 @@ p {
 }
 
 @media (max-width: 1603px) {
+  .menu-item {
+    height: 55px;
+    width: 115px;
+  }
+  .menu-item > a {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 1603px) {
   .container > p,
   .text p,
   .text {
