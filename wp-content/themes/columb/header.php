@@ -61,18 +61,17 @@
 						</svg>
 
 						<div class="search-menu">
-							<form action="" id="search">
-								<input type="text" id="query" placeholder="Какую экскурсию ищите?">
+							<form role="search search-menu" id="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'woocommerce' ); ?></label>
+									<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="Какую экскурсию ищите?" value="<?php echo get_search_query(); ?>" name="s" />
+									<input type="hidden" name="post_type" value="product" />
 							</form>
-							<button type="submit" form="order_call" id="search_submit_btn">
-								<svg class="svg svg-search" width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<button form="order_call" id="search_submit_btn" type="submit" class="search-field <?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ); ?>">
+									<svg class="search-field svg svg-search" width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<circle cx="8.5" cy="8.5" r="7.5" stroke="#2D9CDB" stroke-width="2" />
 									<line x1="14.3325" y1="13.8715" x2="33.7537" y2="33.2927" stroke="#2D9CDB" stroke-width="2" />
 								</svg>
 							</button>
-							<div class="search-close">
-								<img src="<?php echo get_template_directory_uri() . '/img/close_ico_silver.png'; ?>" alt="Close">
-							</div>
 						</div>
 					</div>
 					<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="cart-ico active">

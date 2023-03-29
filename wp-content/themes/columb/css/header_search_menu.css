@@ -4,8 +4,8 @@
   z-index: 1000;
   width: 601px;
   height: 59px;
-  background: #FFFFFF;
-  border: 1px solid #CFCDCD;
+  background: #ffffff;
+  border: 1px solid #cfcdcd;
   border-radius: 15px;
   top: 25px;
   display: flex;
@@ -17,11 +17,10 @@
   transition: 0.2s;
 }
 
-
 .search-menu input {
   border: none;
   margin: 10px 10px;
-  width: 100%;
+  width: 90%;
 }
 
 .search-menu input:active,
@@ -56,7 +55,6 @@
   transform: scaleX(1);
 }
 
-
 @media (max-width: 1603px) {
   .search-menu {
     border-radius: 10px;
@@ -64,7 +62,6 @@
     height: 38px;
     top: -30px;
   }
-
   .search-close {
     width: 30px;
     height: 30px;
@@ -79,6 +76,5 @@
     width: 299px;
     height: 38px;
     top: -30px;
+  }
 }
-}
-
