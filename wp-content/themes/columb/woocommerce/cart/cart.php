@@ -43,17 +43,15 @@ defined('ABSPATH') || exit;
 							);
 							?>
 						</div>
-						<div class="cart-card-img">
 							<?php
 							$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
 							if (!$product_permalink) {
 								echo $thumbnail; // PHPCS: XSS ok.
 							} else {
-								printf('<a href="%s" class="link-basket">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
+								printf('<a href="%s" class="link-basket cart-card-img">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
 							}
 							?>
-						</div>
 						<div class="cart-card-content">
 							<?php
 							if (!$product_permalink) {
@@ -95,7 +93,7 @@ defined('ABSPATH') || exit;
 		</div>
 		<div class="cart-bill">
 			<p>Общий счет на оплату этих экскурсий: <span><?php echo WC()->cart->get_product_subtotal($_product, $cart_item['quantity']) ?></span></p>
-			<button class="card-button">Оплатить</button>
+			<button class="card-button"><?php do_action( 'woocommerce_proceed_to_checkout' ); ?></button>
 		</div>
 	
 </div>
