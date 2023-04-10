@@ -142,6 +142,7 @@ function columb_scripts()
 	wp_enqueue_style('cart', get_template_directory_uri() . '/css/cart/main.css', array(), null);
 	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array(), null);
 	wp_enqueue_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css', array(), null);
+	
 	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
 	wp_enqueue_script('columb-popup', get_template_directory_uri() . '/js/popup.js', array(), null, true);
 	wp_enqueue_script('columb-burger-menu', get_template_directory_uri() . '/js/burger_menu_mobile.js', array(), null, true);
@@ -150,7 +151,17 @@ function columb_scripts()
 	wp_enqueue_script('columb-slider', get_template_directory_uri() . '/js/slider_activate.js', array(), null, true);
 	wp_enqueue_script('columb-video-popup', get_template_directory_uri() . '/js/video_popup.js', array(), null, true);
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('loader', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true,time());
+	wp_localize_script( 
+		'loader', 
+		'misha', 
+		array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+	);
+	
+	
 }
+
+
 /**
  * Load Jetpack compatibility file.
  */
@@ -228,3 +239,82 @@ add_filter('woocommerce_breadcrumb_defaults', function () {
 		'home' => 'Главная'
 	);
 });
+
+add_action('wp_footer', function() {
+
+	?>
+	
+	<style>
+		.order-text {
+			font-size: 20px !important;
+			line-height: 1.2 !important;
+		}
+	</style>
+	
+	<script>
+	
+	jQuery(document).ready(function($) {
+	
+		$('.open-cart-popup').on('click', function() {
+	
+			$('.cart-popup').addClass('active');
+	
+			let product_name = $(this).attr('data-product_name');
+			let travel_date = $(this).attr('data-travel_date');
+			let count_adult = $(this).attr('data-count_adult');
+			let count_child = $(this).attr('data-count_child');
+			let dop_charges = $(this).attr('data-dop_charges');
+			let product_id = $(this).attr('data-product_id');
+			let product_price = $(this).attr('data-product_price');
+	
+			$('.cart-popup .order-text').text(product_name);
+	
+			$('.cart-popup .travel_date').text(travel_date);
+			$('.cart-popup .count_adult').text(count_adult);
+			$('.cart-popup .count_child').text(count_child);
+			$('.cart-popup .dop_charges').text(dop_charges);
+			$('.cart-popup .product_price').text(product_price);
+	
+			$('.cart-popup .add_to_cart_button').attr('data-product_id', product_id);
+	
+			return false
+		});
+	
+		$('.popup-close').on('click', function() {
+	
+			$('.cart-popup').removeClass('active');
+			return false
+	
+		});
+	
+	});
+	
+	</script>
+	
+	<?php
+	
+	});
+
+
+add_action('wp_ajax_loadmore', 'true_loader');
+add_action('wp_ajax_nopriv_loadmore', 'true_loader');
+function true_loader() {
+	$paged = !empty( $_POST[ 'paged' ] ) ? $_POST[ 'paged' ] : 1;
+	$paged++;
+ 
+	$topExc = new WP_Query(array(
+    'product_cat' => 'top-12-ekskursii',
+    'post_type' => 'product',
+    'posts_per_page' => 12,
+    'paged'=> $paged,
+  ));
+ 
+	while( $topExc->have_posts() ) : $topExc->the_post();
+ 
+	wc_get_template_part('content', 'product');
+ 
+	endwhile;
+	wp_die();
+ 
+}
+
