@@ -57,16 +57,8 @@ get_header();
     <img class="right-image" src="<?= the_field('index_about_img') ?>" />
   </div>
 </div>
-<div class="cards container">
-  <div class="more-button-row">
-    <div class="left-text head-text">
-      <span><?php echo the_field('section_product_title') ?></span>
-      <div class="line"></div>
-    </div>
-    <button class="right-button more-button">Показать больше</button>
-  </div>
-  <?php echo do_shortcode("[products category='excursion']"); ?>
-</div>
+<?php get_template_part('template-parts/loader-more');?>
+
 <div class="transfer container">
   <div class="head-text">
     <span><?php echo the_field('title_transfer') ?></span>
