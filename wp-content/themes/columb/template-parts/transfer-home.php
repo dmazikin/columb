@@ -19,7 +19,7 @@
             <img src="<?php echo $individualImg; ?>" alt="image">
             <p class="car-name"><?php echo $individualTitle; ?></p>
             <p class="car-text"><?php echo $individualDesc ?></p>
-            <a href="<?php echo get_site_url() . '/transfer'; ?>" class="card-button">Забронировать</a>
+            <a href="<?php echo get_site_url() . '/transfer'; ?>" class="card-button">Узнать подробнее</a>
 
           </div>
         <?php endwhile; ?>
@@ -41,7 +41,7 @@
             <img src="<?php echo $individualImg; ?>" alt="image">
             <p class="car-name"><?php echo $individualTitle; ?></p>
             <p class="car-text"><?php echo $individualDesc ?></p>
-            <a href="<?php echo get_site_url() . '/transfer'; ?>" class="card-button">Забронировать</a>
+            <a href="<?php echo get_site_url() . '/transfer'; ?>" class="card-button">Узнать подробнее</a>
 
           </div>
         <?php endwhile; ?>
