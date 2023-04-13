@@ -127,6 +127,7 @@ nav.menu {
   border-radius: 15px;
   color: #ffffff;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .card-button a {

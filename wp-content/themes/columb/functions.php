@@ -239,63 +239,7 @@ add_filter('woocommerce_breadcrumb_defaults', function () {
 		'home' => 'Главная'
 	);
 });
-
-add_action('wp_footer', function() {
-
-	?>
-	
-	<style>
-		.order-text {
-			font-size: 20px !important;
-			line-height: 1.2 !important;
-		}
-	</style>
-	
-	<script>
-	
-	jQuery(document).ready(function($) {
-	
-		$('.open-cart-popup').on('click', function() {
-	
-			$('.cart-popup').addClass('active');
-	
-			let product_name = $(this).attr('data-product_name');
-			let travel_date = $(this).attr('data-travel_date');
-			let count_adult = $(this).attr('data-count_adult');
-			let count_child = $(this).attr('data-count_child');
-			let dop_charges = $(this).attr('data-dop_charges');
-			let product_id = $(this).attr('data-product_id');
-			let product_price = $(this).attr('data-product_price');
-	
-			$('.cart-popup .order-text').text(product_name);
-	
-			$('.cart-popup .travel_date').text(travel_date);
-			$('.cart-popup .count_adult').text(count_adult);
-			$('.cart-popup .count_child').text(count_child);
-			$('.cart-popup .dop_charges').text(dop_charges);
-			$('.cart-popup .product_price').text(product_price);
-	
-			$('.cart-popup .add_to_cart_button').attr('data-product_id', product_id);
-	
-			return false
-		});
-	
-		$('.popup-close').on('click', function() {
-	
-			$('.cart-popup').removeClass('active');
-			return false
-	
-		});
-	
-	});
-	
-	</script>
-	
-	<?php
-	
-	});
-
-
+//Start - Загрузка экскурсий на главной странице по клику показать еще 
 add_action('wp_ajax_loadmore', 'true_loader');
 add_action('wp_ajax_nopriv_loadmore', 'true_loader');
 function true_loader() {
@@ -307,6 +251,8 @@ function true_loader() {
     'post_type' => 'product',
     'posts_per_page' => 12,
     'paged'=> $paged,
+		'orderby' =>  'menu_order',
+    'order' =>  'ASC',
   ));
  
 	while( $topExc->have_posts() ) : $topExc->the_post();
@@ -317,4 +263,4 @@ function true_loader() {
 	wp_die();
  
 }
-
+//End - Загрузка экскурсий на главной странице по клику показать еще 

@@ -34,7 +34,7 @@ echo '</pre>'; */
 <div <?php wc_product_class('card', $product); ?>>
 	<div class="card-top">
 		<?php echo $product->get_image('thumbn'); ?>
-		<?php if (strtotime($product->get_date_created()) > time() - (86400 * 5)) : ?>
+		<?php if (get_field('excursion_news',$product->get_id())) : ?>
 			<div class="marker red">
 				<img src="<?php echo get_template_directory_uri() . '/img/marker_red.png' ?>" />
 				<p>Новинка</p>
@@ -50,7 +50,7 @@ echo '</pre>'; */
 	<p class="card-text">
 		<?php echo $product->get_short_description(); ?>
 	</p>
-	<button class="card-button">
-		<?php woocommerce_template_loop_add_to_cart(); ?>
-	</button>
+	<a class="card-button open-cart-popup" href="<?php echo $product->get_permalink()?>">
+		Узнать подробнее
+	</a>
 </div>

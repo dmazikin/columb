@@ -12,10 +12,12 @@
     'post_type' => 'product',
     'posts_per_page' => 12,
     'paged'=> $paged,
-    'order' => 'ASC',
-    'orderby' => 'name',
+    'orderby' =>  'menu_order',
+    'order' =>  'ASC',
     
   ));
+ /*  echo "<pre>";
+  print_r($topExc); */
   
   $max_pages = $topExc->max_num_pages;
 
