@@ -206,16 +206,12 @@
 
 .header-menu {
   display: grid;
-  /*  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; */
   grid-template-columns: repeat(12, 1fr);
   list-style: none;
   padding: 0;
   position: relative;
+  margin-bottom: 0;
+  min-height: 53px;
 }
 
 .col-4 {
