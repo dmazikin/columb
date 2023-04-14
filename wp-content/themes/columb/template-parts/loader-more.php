@@ -26,20 +26,21 @@ woocommerce_product_loop_start();
     $topExc->the_post();
     wc_get_template_part('content', 'product');
   }
-  if( $paged < $max_pages ) :
-
-    ?><div id="loadmore" class="card-button" style="text-align:center;">
-      <a href="#"
-        data-max_pages="<?php echo $max_pages ?>"
-        data-paged="<?php echo $paged ?>"
-        data-taxonomy="<?php echo is_category() ? 'category' : get_query_var( 'taxonomy' ) ?>"
-        data-term_id="<?php echo get_queried_object_id() ?>"
-        data-pagenumlink="<?php echo get_pagenum_link( 1 ) ?>"
-        class="button">Показать больше</a>
-    </div><?php
   
-  endif;
 woocommerce_product_loop_end();
+if( $paged < $max_pages ) :
+
+  ?><div id="loadmore" class="card-button" style="text-align:center;">
+    <a href="#"
+      data-max_pages="<?php echo $max_pages ?>"
+      data-paged="<?php echo $paged ?>"
+      data-taxonomy="<?php echo is_category() ? 'category' : get_query_var( 'taxonomy' ) ?>"
+      data-term_id="<?php echo get_queried_object_id() ?>"
+      data-pagenumlink="<?php echo get_pagenum_link( 1 ) ?>"
+      class="button">Показать больше</a>
+  </div><?php
+
+endif;
 
 wp_reset_postdata();
 ?>

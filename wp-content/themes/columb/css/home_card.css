@@ -12,7 +12,7 @@
 }
 
 .card {
-  width: 478px;
+  width: 30%;
   display: flex;
   text-align: center;
   background: #ffffff;
@@ -49,9 +49,13 @@
 .card-title {
   font-size: 22px;
   font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .card-text {
+  padding-left: 20px;
+  padding-right: 20px;
   margin-bottom: 10px;
   font-family: "Roboto", serif;
   font-style: italic;
@@ -102,16 +106,26 @@ body > div.indent > div.card-container.container > div > button {
 
 @media (max-width: 1200px) {
   .card {
-    flex-basis: 45%;
+    flex-basis: 42%;
+  }
+  .card-text {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
-@media (max-width: 748px) {
+@media (max-width: 775px) {
+  .card {
+    flex-basis: 100%;
+  }
+  .card-top {
+    width: 100%;
+  }
+  .card-top > img {
+    width: 100%;
+  }
   .card-container {
     justify-content: center;
-  }
-  .card {
-    flex-basis: auto;
   }
   .card-title {
     font-size: 15px;
