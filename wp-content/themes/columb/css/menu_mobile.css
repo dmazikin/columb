@@ -17,6 +17,38 @@
   margin: 2px 0;
 }
 
+@media (max-width: 1200px) {
+  .mobile-menu {
+    width: 250px;
+    padding: 15px;
+  }
+  .mobile-menu.active {
+    left: -69px;
+    top: -7px;
+  }
+  .sub-menu {
+    position: unset;
+  }
+  .menu-item:hover .sub-menu {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: #393185;
+  }
+  .menu-item {
+    padding-bottom: 0;
+  }
+  .sub-menu .menu-item {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .sub-menu > .menu-item > a {
+    color: #ffffff;
+  }
+  .menu-item:hover .sub-menu {
+  }
+}
+
 @media (max-width: 748px) {
   .sub-menu {
     right: 120px;

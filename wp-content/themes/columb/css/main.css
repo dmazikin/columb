@@ -74,7 +74,7 @@ nav.menu {
 
 .sub-menu {
   width: 201px;
-  visibility: hidden;
+  display: none;
   position: absolute;
   padding: 0;
   background: #ffffff;
@@ -85,7 +85,6 @@ nav.menu {
 }
 
 .sub-menu .menu-item {
-  margin: 20px;
   font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
@@ -96,14 +95,17 @@ nav.menu {
 }
 
 .menu-item:hover .sub-menu {
-  visibility: visible;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  top: 53px;
+  top: 64px;
+}
+
+.menu-item:last-child:hover .sub-menu {
+  right: 0;
 }
 
 .container {
@@ -357,23 +359,22 @@ p {
 
 @media (max-width: 1603px) {
   .menu-item {
-    height: 55px;
-    width: 115px;
+    min-height: 55px;
   }
   .menu-item > a {
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
   }
-}
-
-@media (max-width: 1603px) {
   .container > p,
   .text p,
   .text {
     font-size: 15px;
     line-height: 24px;
   }
+}
+
+@media (max-width: 1385px) {
 }
 
 @media (max-width: 748px) {
@@ -640,17 +641,20 @@ textarea {
   margin: 2px 0;
 }
 
-@media (max-width: 748px) {
+@media (max-width: 1200px) {
   .mobile-menu {
     padding: 0;
   }
   .menu-button-mobile {
     position: absolute;
     top: 10px;
-    right: 0;
+    right: 30px;
     display: flex;
     margin-right: 10px;
   }
+}
+
+@media (max-width: 748px) {
   .page-button {
     height: 42px;
     width: 120px;
