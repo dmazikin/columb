@@ -224,6 +224,7 @@
 
 @media (max-width: 1603px) {
   .header-logo {
+    z-index: 99;
     top: 70px;
     left: calc(50% - 156px / 2);
   }

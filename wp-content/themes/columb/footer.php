@@ -69,7 +69,7 @@
         <p>Почта: <span><?php echo the_field('footer_mail', 5) ?></span></p>
       </div>
       <div class="footer-manager">
-        <p>Диспетчер: <span><?php echo the_field('footer_operator_tel', 5) ?></span></p>
+        <p><span><?php echo the_field('footer_operator_tel', 5) ?></span></p>
       </div>
       <img class="anchor" src="<?php echo the_field('footer_anchor_img', 5) ?>" alt="anchor" />
     </div>
@@ -99,37 +99,39 @@
 
 <div class="popup-screen popup-close-screen cart-popup">
   <div class="popup-outer">
-    <div class="popup-close"><img src="img/close_ico.png" alt="" /></div>
+    <div class="popup-close"><img src="<?php echo get_template_directory_uri(); ?>/img/close_ico.png" alt="close" /></div>
     <div class="order-text-wrapper popup-cart-text-wrapper">
       <div class="order-text">Название экскурсии</div>
     </div>
     <div class="popup-inner">
+      <?php /*
       <form action="" id="cart_add">
         <input type="text" id="full_name_cart" placeholder="Ф.И.О" />
         <input type="tel" id="phone_cart" placeholder="Телефон" />
       </form>
+      */ ?>
       <div class="popup-cart-info-cards">
         <div class="popup-cart-info-card">
           <p>Количество взрослых:</p>
-          <div class="popup-cart-info-card-window">5 взрослых</div>
+          <div class="popup-cart-info-card-window"><div><span class="count_adult">5</span> взрослых</div></div>
         </div>
         <div class="popup-cart-info-card">
           <p>Количество детей:</p>
-          <div class="popup-cart-info-card-window">2 ребенка</div>
+          <div class="popup-cart-info-card-window"><div><span class="count_child">2</span> ребенка</div></div>
         </div>
         <div class="popup-cart-info-card">
           <p>Выбрать время отправления:</p>
-          <div class="popup-cart-info-card-window">06.12.22 Вт.13.00</div>
+          <div class="popup-cart-info-card-window"><div><span class="travel_date">06.12.22 Вт.13.00</span></div></div>
         </div>
         <div class="popup-cart-info-card">
           <p>Дополнительные расходы:</p>
-          <div class="popup-cart-info-card-window">500 р. / 300 р.</div>
+          <div class="popup-cart-info-card-window"><div><span class="dop_charges">500 р. / 300 р.</span></div></div>
         </div>
         <div class="popup-cart-info-card">
           <p>Общая сумма к оплате:</p>
-          <div class="popup-cart-info-card-window">7300 р.</div>
+          <div class="popup-cart-info-card-window"><div></div><span class="product_price">7300</span> р.</div>
         </div>
-        <button type="submit" form="cart_add" id="submit_cart_btn">В корзину</button>
+        <button id="submit_cart_btn" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="">В корзину</button>
       </div>
     </div>
   </div>
