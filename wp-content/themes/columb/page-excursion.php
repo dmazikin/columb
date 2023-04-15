@@ -20,7 +20,9 @@ get_header();
   ));
   
   $max_pages = $topExc->max_num_pages;
-
+?>
+<div class="container">
+<?php
 woocommerce_product_loop_start();
   while ($Exc->have_posts()) {
     $Exc->the_post();
@@ -30,6 +32,7 @@ woocommerce_product_loop_end();
 
 wp_reset_postdata();
 ?>
+</div>
 <?php
 get_footer();
 ?>

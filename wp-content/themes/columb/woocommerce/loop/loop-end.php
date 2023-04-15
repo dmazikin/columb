@@ -20,6 +20,5 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-</div>
 <?php the_posts_pagination();?>
 </div>

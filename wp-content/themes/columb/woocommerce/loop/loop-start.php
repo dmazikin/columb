@@ -20,5 +20,4 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<div class="cards container">
-	<div class="card-container">
+<div class="card-container">
