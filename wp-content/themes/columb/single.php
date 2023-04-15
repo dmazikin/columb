@@ -15,7 +15,7 @@ get_header(); ?>
       ?>
 
 			<h1 class='about-title'><?php the_title()?></h1>
-      <div class="content">
+      <div class="container">
       <?php the_content()?>
       </div>
 <?php 
