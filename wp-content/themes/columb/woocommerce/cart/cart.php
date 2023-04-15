@@ -43,15 +43,17 @@ defined('ABSPATH') || exit;
 							);
 							?>
 						</div>
+						<div class="cart-card-img">
 							<?php
 							$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
 							if (!$product_permalink) {
 								echo $thumbnail; // PHPCS: XSS ok.
 							} else {
-								printf('<a href="%s" class="link-basket cart-card-img">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
+								printf('<a href="%s" class="link-basket">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
 							}
 							?>
+						</div>
 						<div class="cart-card-content">
 							<?php
 							if (!$product_permalink) {
@@ -63,22 +65,16 @@ defined('ABSPATH') || exit;
 							<div class="app-divider"></div>
 							<div class="cart-card-info-row">
 								<div class="cart-card-info-col">
-									<div class="info-title">Время отправления:</div>
-									<div class="info-desc"><?php the_field('travel_date',$_product->get_id());?></div>
+									<div class="info-title">Дата отправления:</div>
+									<div class="info-desc"><?php echo $cart_item['travel_date']; ?></div>
 								</div>
 								<div class="cart-card-info-col">
 									<div class="info-title">Количество взрослых:</div>
-									<div class="info-desc">
-									<?php the_field('count_adult',$_product->get_id());?>
-									</div>
+									<div class="info-desc"><?php echo $cart_item['count_adult']; ?></div>
 								</div>
 								<div class="cart-card-info-col">
 									<div class="info-title">Количество детей:</div>
-									<div class="info-desc"><?php the_field('count_child',$_product->get_id());?></div>
-								</div>
-								<div class="cart-card-info-col">
-									<div class="info-title">Дополнительные расходы:</div>
-									<div class="info-desc"><?php the_field('dop_charges',$_product->get_id());?></div>
+									<div class="info-desc"><?php echo $cart_item['count_child']; ?></div>
 								</div>
 								<div class="cart-card-info-col">
 									<div class="info-title">Оплата за экскурсию:</div>
@@ -93,7 +89,7 @@ defined('ABSPATH') || exit;
 		</div>
 		<div class="cart-bill">
 			<p>Общий счет на оплату этих экскурсий: <span><?php echo WC()->cart->get_product_subtotal($_product, $cart_item['quantity']) ?></span></p>
-			<button class="card-button"><?php do_action( 'woocommerce_proceed_to_checkout' ); ?></button>
+			<button class="card-button">Оплатить</button>
 		</div>
 	
 </div>

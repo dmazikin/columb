@@ -264,3 +264,121 @@ function true_loader() {
  
 }
 //End - Загрузка экскурсий на главной странице по клику показать еще 
+
+//Start - обработка данных пользователя из карточки экскурсий в коризну
+add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',10,3);
+
+/**
+ * Add custom data to Cart
+ * @param  [type] $cart_item_data [description]
+ * @param  [type] $product_id     [description]
+ * @param  [type] $variation_id   [description]
+ * @return [type]                 [description]
+ */
+function wdm_add_item_data($cart_item_data, $product_id, $variation_id) {
+
+    if( isset($_REQUEST['count_adult']) ) {
+        $cart_item_data['count_adult'] = sanitize_text_field($_REQUEST['count_adult']);
+    }
+
+    if( isset($_REQUEST['count_child']) ) {
+        $cart_item_data['count_child'] = sanitize_text_field($_REQUEST['count_child']);
+    }
+
+    if( isset($_REQUEST['travel_date']) ) {
+        $cart_item_data['travel_date'] = sanitize_text_field($_REQUEST['travel_date']);
+    }
+
+    return $cart_item_data;
+}
+
+add_action('wp_footer', function() {
+
+?>
+
+<style>
+	.order-text {
+		font-size: 20px !important;
+		line-height: 1.2 !important;
+	}
+	.popup-cart-info-card-window {
+		padding: 0;
+	}
+	.popup-cart-info-card-window input {
+		border: none;
+		outline: none;
+		height: 100%;
+		border-radius: 15px;
+		text-align: center;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.popup-cart-info-card {
+		max-width: 100%; 
+		flex-basis: calc( (100% - 2 * 32px) / 3 );
+	}
+	.popup-cart-info-card-price {
+		flex-grow: 1;
+		
+	}
+	@media (max-width: 767.98px) {
+		.popup-cart-info-card {
+			flex-basis: calc( (100% - 1 * 32px) / 2 );
+		}
+		.cart-popup .popup-outer {
+			flex-direction: column;
+		}
+		.cart-popup  .order-text-wrapper {
+			position: static;
+		}
+	}
+</style>
+
+<script>
+
+jQuery(document).ready(function($) {
+
+	$('.open-cart-popup').on('click', function() {
+
+		$('.cart-popup').addClass('active');
+
+		let product_name = $(this).attr('data-product_name');
+		let travel_date = $(this).attr('data-travel_date');
+		let count_adult = $(this).attr('data-count_adult');
+		let count_child = $(this).attr('data-count_child');
+		let dop_charges = $(this).attr('data-dop_charges');
+		let product_id = $(this).attr('data-product_id');
+		let product_price = $(this).attr('data-product_price');
+
+		$('.cart-popup .order-text').text(product_name);
+
+		$('.cart-popup .travel_date').text(travel_date);
+		$('.cart-popup .count_adult').text(count_adult);
+		$('.cart-popup .count_child').text(count_child);
+		$('.cart-popup .dop_charges').text(dop_charges);
+		$('.cart-popup .product_price').text(product_price);
+
+		$('.cart-popup .add_to_cart_button').attr('data-product_id', product_id);
+
+		return false
+	});
+
+	$('.popup-close').on('click', function() {
+		$('.cart-popup').removeClass('active');
+		return false
+	});
+
+	$('.cart-popup .popup-cart-info-card input').on('change keyup', function() {
+		$('#submit_cart_btn').attr('data-count_adult', $('input[name="count_adult"]').val() );
+		$('#submit_cart_btn').attr('data-count_child', $('input[name="count_child"]').val() );
+		$('#submit_cart_btn').attr('data-travel_date', $('input[name="travel_date"]').val() );
+	});
+
+});
+
+</script>
+
+<?php
+
+});
+//End

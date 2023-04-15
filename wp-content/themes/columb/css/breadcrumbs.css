@@ -1,16 +1,15 @@
 .breadcrumbs {
-  max-width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 0 !important;
+  margin: 45px 0 0 20px;
   gap: 15px;
 }
 
 .breadcrumbs > a {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -26,32 +25,23 @@
 }
 
 @media (max-width: 1603px) {
-  .breadcrumbs {
-    max-width: 450px;
-  }
-
   .breadcrumbs > a {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
   }
-
-
 }
 
 @media (max-width: 748px) {
-  .breadcrumbs-container{
-    padding:0;
+  .breadcrumbs-container {
+    padding: 0;
   }
   .breadcrumbs {
     max-width: 320px;
   }
-
   .breadcrumbs > a {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
   }
-
-
 }

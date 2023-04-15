@@ -50,7 +50,7 @@ echo '</pre>'; */
 	<p class="card-text">
 		<?php echo $product->get_short_description(); ?>
 	</p>
-	<a class="card-button open-cart-popup" href="<?php echo $product->get_permalink()?>">
+	<a class="card-button" href="<?php echo $product->get_permalink()?>">
 		Узнать подробнее
 	</a>
 </div>

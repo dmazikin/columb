@@ -29,6 +29,17 @@ var videoSwiper = new Swiper(".videoSwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+var videoSwiper = new Swiper(".cardSwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  slidesPerGroup: 1,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 var locationSwiper = new Swiper(".hotelSwiper", {
   slidesPerView: 3,
   loop: true,
