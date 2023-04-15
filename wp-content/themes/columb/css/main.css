@@ -25,6 +25,7 @@ nav.menu {
   align-items: center;
   margin: 0 5px;
   padding-bottom: 20px;
+  min-height: 55px;
 }
 
 .page-marker {
@@ -101,7 +102,7 @@ nav.menu {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  top: 64px;
+  top: 51px;
 }
 
 .menu-item:last-child:hover .sub-menu {
@@ -375,9 +376,6 @@ p {
 }
 
 @media (max-width: 1603px) {
-  .menu-item {
-    min-height: 55px;
-  }
   .menu-item > a {
     font-weight: 400;
     font-size: 15px;
