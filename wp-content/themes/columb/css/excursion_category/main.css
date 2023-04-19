@@ -42,6 +42,15 @@
   flex: 1;
 }
 
+.excursion-card-wrapper > img {
+  width: 100%;
+  height: 100%;
+}
+
+.excursion-card__service {
+  padding-bottom: 20px;
+}
+
 .excursion-card-right {
   flex-basis: 46%;
   display: flex;
@@ -72,6 +81,7 @@
 }
 
 .card-button-wrapper {
+  padding-top: 20px;
   position: relative;
   flex: 1;
   display: flex;

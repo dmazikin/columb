@@ -19,10 +19,7 @@
 defined('ABSPATH') || exit;
 
  ?>
- <?php 
-/*  echo '<pre>';
- print_r(WC()->cart); */
- ?>
+
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 <div class="container cart shop_table shop_table_responsive cart woocommerce-cart-form__contents">
 	<?php do_action('woocommerce_before_cart');?>
@@ -91,14 +88,13 @@ defined('ABSPATH') || exit;
 			} ?>
 		</div>
 		<div class="cart-bill">
-			<p>Общий счет на оплату этих экскурсий: <span><?php echo WC()->cart->get_product_subtotal($_product, $cart_item['quantity']) ?></span></p>
+			<p>Общий счет на оплату этих экскурсий: <span><?php echo WC()->cart->get_cart_subtotal(); ?></span></p>
 			<button class="card-button">
 			<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button button alt wc-forward<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
 	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
 </a>
 			</button>
 		</div>
-	
 </div>
 </form>
 
