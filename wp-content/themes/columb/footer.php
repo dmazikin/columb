@@ -134,6 +134,43 @@
     </div>
   </div>
 </div>
+<div class="popup-screen popup-close-screen cart-popup">
+  <div class="popup-outer">
+    <div class="popup-close"><img src="<?php echo get_template_directory_uri(); ?>/img/close_ico.png" alt="close" /></div>
+    <div class="order-text-wrapper popup-cart-text-wrapper">
+      <div class="order-text">Название экскурсии</div>
+    </div>
+    <div class="popup-inner">
+      <div class="popup-cart-info-cards">
+        <div class="popup-cart-info-card">
+          <p>Количество взрослых:</p>
+          <div class="popup-cart-info-card-window">
+            <input type="number" name="count_adult" min="1" value="1">
+          </div>
+        </div>
+        <div class="popup-cart-info-card">
+          <p>Количество детей:</p>
+          <div class="popup-cart-info-card-window">
+            <input type="number" name="count_child" min="0" value="0">
+          </div>
+        </div>
+        <div class="popup-cart-info-card">
+          <p>Выбрать время отправления:</p>
+          <div class="popup-cart-info-card-window">
+            <input type="date" name="travel_date">
+          </div>
+        </div>
+        <div class="popup-cart-info-card popup-cart-info-card-price">
+          <p>Общая сумма к оплате:</p>
+          <div class="popup-cart-info-card-window"><div></div><span class="product_price">7300</span> р.</div>
+        </div>
+        <button id="submit_cart_btn" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="" data-count_adult="1">
+          В корзину
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="video-popup">
   <div class="inner-video-popup">
     <iframe id="youtube-frame" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
