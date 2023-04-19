@@ -48,22 +48,35 @@ get_header();
 			<div class="excursion-card">
         <div class="excursion-card-top">
             <div class="excursion-card-wrapper">
-                <div class="swiper cardSwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                    <div class="swiper-wrapper" id="swiper-wrapper-f4377485caa70549" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="swiper-slide excursion-card-slide swiper-slide-active" role="group" aria-label="1 / 1" style="width: 777px;">
-													<?php echo $product->get_image('thumbn');?>
+                <div class="swiper cardSwiper">
+                        <div class="swiper-wrapper">
+                            <?php $rows = get_field('excursion_repeats',$product->get_id()); ?>
+                            <?php foreach ($rows as $row) : ?>
+                        <div class="swiper-slide excursion-card-slide">
+                            <img src="<?php echo $row['excursion_row_img'] ?>" />
                         </div>
-                    </div>
-                    <div class="swiper-button-next swiper-button-lock" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-f4377485caa70549"><img src="img/right_button_slide.png" alt="arrow right"></div>
-                    <div class="swiper-button-prev swiper-button-lock" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-f4377485caa70549"><img src="img/left_button_slide.png" alt="arrow left"></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="swiper-button-next"><img src="<?php echo get_template_directory_uri() .'/img/right_button_slide.png'?>" alt="arrow right"></div>
+                        <div class="swiper-button-prev"><img src="<?php echo get_template_directory_uri() .'/img/left_button_slide.png'?>" alt="arrow left"></div>
+                </div>
             </div>
             <div class="excursion-card-right">
                 <div class="excursion-card-top-right-text">
-								<?php echo $product->get_description(); ?>
+                    <?php echo $product->get_description(); ?>
                 </div>
                 <div class="card-button-wrapper">
-                    <button class="card-button"><?php woocommerce_template_loop_add_to_cart(); ?></button>
+                <button class="card-button open-cart-popup" 
+                        data-product_name="<?php echo esc_attr( $product->get_title() );?>" 
+                        data-product_id="<?php echo esc_attr( $product->get_id() );?>" 
+                        data-product_price="<?php echo esc_attr( $product->get_price() );?>" 
+                        data-travel_date="<?php echo esc_attr( get_field('travel_date') );?>" 
+                        data-count_adult="<?php echo esc_attr( get_field('count_adult') );?>" 
+                        data-count_child="<?php echo esc_attr( get_field('count_child') );?>" 
+                        data-dop_charges="<?php echo esc_attr( get_field('dop_charges') );?>" 
+                        >
+                        <span>Забронировать</span>
+                </button>
                 </div>
                 <div class="app-divider"></div>
             </div>
