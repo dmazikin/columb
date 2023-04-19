@@ -160,6 +160,53 @@
             <input type="date" name="travel_date">
           </div>
         </div>
+        <?php if(is_term('transfer','product_cat')):?>
+          <div class="popup-cart-info-card">
+            <p>Места подачи:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="text" name="place">
+            </div>
+          </div>
+          <div class="popup-cart-info-card">
+            <p>Маршрут назначения:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="text" name="destination_route">
+            </div>
+          </div>
+          <div class="popup-cart-info-card">
+            <p>Наличие багажа:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="text" name="baggage">
+            </div>
+          </div>
+          <div class="popup-cart-info-card">
+            <p>Категория авто:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="text" name="сar_category">
+            </div>
+          </div>
+          <div class="popup-cart-info-card">
+            <p>ФИО:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="text" name="fio">
+            </div>
+          </div>
+          <div class="popup-cart-info-card">
+            <p>Номер телефона:</p>
+            <div class="popup-cart-info-card-window">
+              <input type="number" name="phone_transfer">
+            </div>
+          </div>
+          <div class="popup-cart-warning">
+            <p>
+            Получить стоимость трансфера, после согласования перейти к оплате
+            </p>
+            <p>
+            По приезде/прилёте заранее гости получают данные по водителю и номер авто,
+            инструкцию по посадке.
+            </p>
+          </div>
+        <?php endif;?>
         <div class="popup-cart-info-card popup-cart-info-card-price">
           <p>Общая сумма к оплате:</p>
           <div class="popup-cart-info-card-window"><div></div><span class="product_price">7300</span> р.</div>

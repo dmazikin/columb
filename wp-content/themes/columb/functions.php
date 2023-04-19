@@ -297,6 +297,10 @@ add_action('wp_footer', function() {
 ?>
 
 <style>
+	.popup-cart-warning {
+		text-align: center;
+		color: #ffffff;
+	}
 	.order-text {
 		font-size: 20px !important;
 		line-height: 1.2 !important;

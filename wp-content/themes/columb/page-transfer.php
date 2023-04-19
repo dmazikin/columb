@@ -39,8 +39,16 @@ $transfer = new WP_Query(array(
 <?php while ($transfer->have_posts()) : $transfer->the_post(); ?>
   <div class="class-auto container">
     <h2 class="head-text title"><?php the_title(); ?></h2>
-    <button class="card-button">
-      <?php woocommerce_template_loop_add_to_cart(); ?>
+    <button class="card-button open-cart-popup" 
+            data-product_name="<?php echo esc_attr( $product->get_title() );?>" 
+            data-product_id="<?php echo esc_attr( $product->get_id() );?>" 
+            data-product_price="<?php echo esc_attr( $product->get_price() );?>" 
+            data-travel_date="<?php echo esc_attr( get_field('travel_date') );?>" 
+            data-count_adult="<?php echo esc_attr( get_field('count_adult') );?>" 
+            data-count_child="<?php echo esc_attr( get_field('count_child') );?>" 
+            data-dop_charges="<?php echo esc_attr( get_field('dop_charges') );?>" 
+            >
+            <span>Забронировать</span>
     </button>
     <div class="swiper bookingSwiper">
       <div class="swiper-wrapper">
