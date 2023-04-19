@@ -160,7 +160,7 @@
             <input type="date" name="travel_date">
           </div>
         </div>
-        <?php if(is_term('transfer','product_cat')):?>
+        <?php if(is_page( 'transfer')):?>
           <div class="popup-cart-info-card">
             <p>Места подачи:</p>
             <div class="popup-cart-info-card-window">
