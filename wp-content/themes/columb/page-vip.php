@@ -58,9 +58,50 @@ get_header();
     </div>
   </div>
 </div>
-<div class="special-service container">
-  <?php the_content(); ?>
-</div>
+<?php
+
+$vip = new WP_Query([
+  'category_name' => 'vip-obsluzhivanie',
+  'post_type' => 'post',
+  'posts_per_page' => -1,
+]);
+
+?>
+<?php if ($vip->have_posts()) : ?>
+  <?php while ($vip->have_posts()) : $vip->the_post(); ?>
+    <div class="special-service container">
+      <h1 class="head-text title"><?php the_title(); ?></h1>
+      <div class="service-wrapper">
+        <div class="service-text text">
+          <?php
+          $fieldDesc = get_field('individual_page_desc', $vip->the_id());
+          echo $fieldDesc;
+          ?>
+        </div>
+        <div class="service-gallery">
+          <?php
+          $fieldGallery = get_field('individual_page_gallaery', $vip->the_id());
+          ?>
+          <?php if ($fieldGallery) : ?>
+            <?php foreach ($fieldGallery as $image) : ?>
+              <?php
+              /*   echo "<pre>";
+            print_r($image); */
+              ?>
+              <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </div>
+        <div class="special-service-btn">
+          <button class="card-button">
+            <span>Оставить заявку</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  <?php endwhile; ?>
+  <?php wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
 get_footer();
 ?>
