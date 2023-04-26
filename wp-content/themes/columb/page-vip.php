@@ -92,11 +92,13 @@ $vip = new WP_Query([
             <?php endforeach; ?>
           <?php endif; ?>
         </div>
-        <div class="special-service-btn">
-          <button class="card-button">
-            <span>Оставить заявку</span>
-          </button>
-        </div>
+        <?php if ($fieldDesc) : ?>
+          <div class="special-service-btn">
+            <button class="card-button">
+              <span>Оставить заявку</span>
+            </button>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   <?php endwhile; ?>

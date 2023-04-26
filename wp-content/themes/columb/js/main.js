@@ -32,4 +32,7 @@ jQuery(function ($) {
       },
     });
   });
+  //Добавляет класс абзацам для редактора WordPress
+  $("p").addClass("text-accented");
+  $(".card-text,.car-text,.rev-card-text ").removeClass("text-accented");
 });
