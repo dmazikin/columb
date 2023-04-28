@@ -35,4 +35,9 @@ jQuery(function ($) {
   //Добавляет класс абзацам для редактора WordPress
   $("p").addClass("text-accented");
   $(".card-text,.car-text,.rev-card-text ").removeClass("text-accented");
+
+  $(".page-id-113 .card-button, .open-popup-mice").on("click", function () {
+    $(".popup-mice").addClass("active");
+    return false;
+  });
 });

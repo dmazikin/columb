@@ -142,7 +142,7 @@ function columb_scripts()
 	wp_enqueue_style('cart', get_template_directory_uri() . '/css/cart/main.css', array(), null);
 	wp_enqueue_style('columb-style', get_template_directory_uri() . '/css/main.css', array(), null);
 	wp_enqueue_style('menu_mobile', get_template_directory_uri() . '/css/menu_mobile.css', array(), null);
-	
+
 	wp_enqueue_script('columb-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), null, true);
 	wp_enqueue_script('columb-popup', get_template_directory_uri() . '/js/popup.js', array(), null, true);
 	wp_enqueue_script('columb-burger-menu', get_template_directory_uri() . '/js/burger_menu_mobile.js', array(), null, true);
@@ -151,14 +151,12 @@ function columb_scripts()
 	wp_enqueue_script('columb-slider', get_template_directory_uri() . '/js/slider_activate.js', array(), null, true);
 	wp_enqueue_script('columb-video-popup', get_template_directory_uri() . '/js/video_popup.js', array(), null, true);
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('loader', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true,time());
-	wp_localize_script( 
-		'loader', 
-		'misha', 
-		array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+	wp_enqueue_script('loader', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true, time());
+	wp_localize_script(
+		'loader',
+		'misha',
+		array('ajaxurl' => admin_url('admin-ajax.php'))
 	);
-	
-	
 }
 
 
@@ -242,31 +240,31 @@ add_filter('woocommerce_breadcrumb_defaults', function () {
 //Start - Загрузка экскурсий на главной странице по клику показать еще 
 add_action('wp_ajax_loadmore', 'true_loader');
 add_action('wp_ajax_nopriv_loadmore', 'true_loader');
-function true_loader() {
-	$paged = !empty( $_POST[ 'paged' ] ) ? $_POST[ 'paged' ] : 1;
+function true_loader()
+{
+	$paged = !empty($_POST['paged']) ? $_POST['paged'] : 1;
 	$paged++;
- 
+
 	$topExc = new WP_Query(array(
-    'product_cat' => 'top-12-ekskursii',
-    'post_type' => 'product',
-    'posts_per_page' => 12,
-    'paged'=> $paged,
+		'product_cat' => 'top-12-ekskursii',
+		'post_type' => 'product',
+		'posts_per_page' => 12,
+		'paged' => $paged,
 		'orderby' =>  'menu_order',
-    'order' =>  'ASC',
-  ));
- 
-	while( $topExc->have_posts() ) : $topExc->the_post();
- 
-	wc_get_template_part('content', 'product');
- 
+		'order' =>  'ASC',
+	));
+
+	while ($topExc->have_posts()) : $topExc->the_post();
+
+		wc_get_template_part('content', 'product');
+
 	endwhile;
 	wp_die();
- 
 }
 //End - Загрузка экскурсий на главной странице по клику показать еще 
 
 //Start - обработка данных пользователя из карточки экскурсий в коризну
-add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',10,3);
+add_filter('woocommerce_add_cart_item_data', 'wdm_add_item_data', 10, 3);
 
 /**
  * Add custom data to Cart
@@ -275,114 +273,123 @@ add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',10,3);
  * @param  [type] $variation_id   [description]
  * @return [type]                 [description]
  */
-function wdm_add_item_data($cart_item_data, $product_id, $variation_id) {
+function wdm_add_item_data($cart_item_data, $product_id, $variation_id)
+{
 
-    if( isset($_REQUEST['count_adult']) ) {
-        $cart_item_data['count_adult'] = sanitize_text_field($_REQUEST['count_adult']);
-    }
+	if (isset($_REQUEST['count_adult'])) {
+		$cart_item_data['count_adult'] = sanitize_text_field($_REQUEST['count_adult']);
+	}
 
-    if( isset($_REQUEST['count_child']) ) {
-        $cart_item_data['count_child'] = sanitize_text_field($_REQUEST['count_child']);
-    }
+	if (isset($_REQUEST['count_child'])) {
+		$cart_item_data['count_child'] = sanitize_text_field($_REQUEST['count_child']);
+	}
 
-    if( isset($_REQUEST['travel_date']) ) {
-        $cart_item_data['travel_date'] = sanitize_text_field($_REQUEST['travel_date']);
-    }
+	if (isset($_REQUEST['travel_date'])) {
+		$cart_item_data['travel_date'] = sanitize_text_field($_REQUEST['travel_date']);
+	}
 
-    return $cart_item_data;
+	return $cart_item_data;
 }
 
-add_action('wp_footer', function() {
+add_action('wp_footer', function () {
 
 ?>
 
-<style>
-	.popup-cart-warning {
-		text-align: center;
-		color: #ffffff;
-	}
-	.order-text {
-		font-size: 20px !important;
-		line-height: 1.2 !important;
-	}
-	.popup-cart-info-card-window {
-		padding: 0;
-	}
-	.popup-cart-info-card-window input {
-		border: none;
-		outline: none;
-		height: 100%;
-		border-radius: 15px;
-		text-align: center;
-		width: 100%;
-		box-sizing: border-box;
-	}
-	.popup-cart-info-card {
-		max-width: 100%; 
-		flex-basis: calc( (100% - 2 * 32px) / 3 );
-	}
-	.popup-cart-info-card-price {
-		flex-grow: 1;
-		
-	}
-	@media (max-width: 767.98px) {
+	<style>
+		.popup-cart-warning {
+			text-align: center;
+			color: #ffffff;
+		}
+
+		.order-text {
+			font-size: 20px !important;
+			line-height: 1.2 !important;
+		}
+
+		.popup-cart-info-card-window {
+			padding: 0;
+		}
+
+		.popup-cart-info-card-window input {
+			border: none;
+			outline: none;
+			height: 100%;
+			border-radius: 15px;
+			text-align: center;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
 		.popup-cart-info-card {
-			flex-basis: calc( (100% - 1 * 32px) / 2 );
+			max-width: 100%;
+			flex-basis: calc((100% - 2 * 32px) / 3);
 		}
-		.cart-popup .popup-outer {
-			flex-direction: column;
+
+		.popup-cart-info-card-price {
+			flex-grow: 1;
+
 		}
-		.cart-popup  .order-text-wrapper {
-			position: static;
+
+		@media (max-width: 767.98px) {
+			.popup-cart-info-card {
+				flex-basis: calc((100% - 1 * 32px) / 2);
+			}
+
+			.cart-popup .popup-outer {
+				flex-direction: column;
+			}
+
+			.cart-popup .order-text-wrapper {
+				position: static;
+			}
 		}
-	}
-</style>
+	</style>
 
-<script>
+	<script>
+		jQuery(document).ready(function($) {
 
-jQuery(document).ready(function($) {
+			$('.open-cart-popup').on('click', function() {
 
-	$('.open-cart-popup').on('click', function() {
+				$('.cart-popup').addClass('active');
 
-		$('.cart-popup').addClass('active');
+				let product_name = $(this).attr('data-product_name');
+				let travel_date = $(this).attr('data-travel_date');
+				let count_adult = $(this).attr('data-count_adult');
+				let count_child = $(this).attr('data-count_child');
+				let dop_charges = $(this).attr('data-dop_charges');
+				let product_id = $(this).attr('data-product_id');
+				let product_price = $(this).attr('data-product_price');
 
-		let product_name = $(this).attr('data-product_name');
-		let travel_date = $(this).attr('data-travel_date');
-		let count_adult = $(this).attr('data-count_adult');
-		let count_child = $(this).attr('data-count_child');
-		let dop_charges = $(this).attr('data-dop_charges');
-		let product_id = $(this).attr('data-product_id');
-		let product_price = $(this).attr('data-product_price');
+				$('.cart-popup .order-text').text(product_name);
 
-		$('.cart-popup .order-text').text(product_name);
+				$('.cart-popup .travel_date').text(travel_date);
+				$('.cart-popup .count_adult').text(count_adult);
+				$('.cart-popup .count_child').text(count_child);
+				$('.cart-popup .dop_charges').text(dop_charges);
+				$('.cart-popup .product_price').text(product_price);
 
-		$('.cart-popup .travel_date').text(travel_date);
-		$('.cart-popup .count_adult').text(count_adult);
-		$('.cart-popup .count_child').text(count_child);
-		$('.cart-popup .dop_charges').text(dop_charges);
-		$('.cart-popup .product_price').text(product_price);
+				$('.cart-popup .add_to_cart_button').attr('data-product_id', product_id);
 
-		$('.cart-popup .add_to_cart_button').attr('data-product_id', product_id);
+				return false
+			});
 
-		return false
-	});
+			$('.popup-close').on('click', function() {
+				$('.cart-popup').removeClass('active');
+				return false
+			});
 
-	$('.popup-close').on('click', function() {
-		$('.cart-popup').removeClass('active');
-		return false
-	});
+			$('.cart-popup .popup-cart-info-card input').on('change keyup', function() {
+				$('#submit_cart_btn').attr('data-count_adult', $('input[name="count_adult"]').val());
+				$('#submit_cart_btn').attr('data-count_child', $('input[name="count_child"]').val());
+				$('#submit_cart_btn').attr('data-travel_date', $('input[name="travel_date"]').val());
+			});
 
-	$('.cart-popup .popup-cart-info-card input').on('change keyup', function() {
-		$('#submit_cart_btn').attr('data-count_adult', $('input[name="count_adult"]').val() );
-		$('#submit_cart_btn').attr('data-count_child', $('input[name="count_child"]').val() );
-		$('#submit_cart_btn').attr('data-travel_date', $('input[name="travel_date"]').val() );
-	});
-
-});
-
-</script>
+		});
+	</script>
 
 <?php
 
 });
 //End
+//Открытие окна для майс мероприятий 
+add_filter('wpcf7_autop_or_not', '__return_false');
