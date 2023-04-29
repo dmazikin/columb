@@ -52,7 +52,8 @@
 }
 
 .excursion-card-right {
-  flex-basis: 46%;
+  padding: 10px;
+  flex-basis: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -130,11 +131,28 @@
 
 .excursion-card-table.flex-start > .excursion-card-table-col {
   padding: 0 2%;
-  max-width: 300px;
+  width: 100%;
 }
 
 .excursion-card-table.flex-start > .excursion-card-table-col > p.text {
   text-align: unset;
+}
+
+.excursion-card-warrning > .excursion-card-table-col {
+  max-width: 100%;
+}
+
+.excursion-card-warrning {
+  display: block;
+  padding-left: 20px;
+}
+
+.excursion-card-warrning > .excursion-card-table-col > .text {
+  text-align: left;
+}
+
+.excursion-card-warrning > .excursion-card-table-col > .info {
+  width: 100%;
 }
 
 @media (max-width: 1199px) {

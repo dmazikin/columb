@@ -18,7 +18,7 @@
   text-decoration: none;
 }
 
-.breadcrumbs > a.active {
+.breadcrumbs > a:last-child {
   text-decoration: #393185 underline;
   font-weight: 700;
   color: #393185;

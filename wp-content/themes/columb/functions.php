@@ -232,8 +232,8 @@ add_filter('woocommerce_breadcrumb_defaults', function () {
 		'delimiter' => '',
 		'wrap_before' => '<div class="breadcrumbs-container container"><div class="breadcrumbs ">',
 		'wrap_after' => '</div></div>',
-		'before' => '<a class="active">',
-		'after' => '</a>',
+		'before' => '',
+		'after' => '',
 		'home' => 'Главная'
 	);
 });

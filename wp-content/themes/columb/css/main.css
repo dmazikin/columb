@@ -110,7 +110,7 @@ nav.menu {
 }
 
 .container {
-  max-width: 1572px;
+  max-width: 1250px;
   margin: 20px auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -203,7 +203,6 @@ nav.menu {
 
 .call-order {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   position: fixed;
   width: 247px;
@@ -211,7 +210,6 @@ nav.menu {
   left: -108px;
   top: 50%;
   background: #c5262a;
-  border: 1px solid #c5262a;
   border-radius: 15px;
   transform: rotate(-90deg);
   z-index: 999;
@@ -657,6 +655,9 @@ textarea {
 }
 
 @media (max-width: 1200px) {
+  .container {
+    max-width: 950px;
+  }
   .mobile-menu {
     padding: 0;
   }
@@ -687,24 +688,23 @@ textarea {
   .mobile-menu > .ml-100 {
     padding: 0;
   }
-  #footer-menu > .menu-button-mobile {
-    position: static;
-  }
 }
 
 @media (max-width: 1603px) {
   .call-order {
-    width: 211px;
-    height: 59px;
-    left: -90px;
+    width: 191px;
+    left: -80px;
   }
   .call-order > p {
     font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 748px) {
   .call-order {
+    display: none;
     left: -71px;
     width: 173px;
     height: 30px;
