@@ -81,9 +81,9 @@
     </div>
   </div>
 </div>
-<div class="popup-screen popup-close-screen">
+<div class="popup-screen popup-close-screen open-call">
   <div class="popup-outer">
-    <div class="popup-close"><img src="img/close_ico.png" alt="" /></div>
+    <div class="popup-close"><img src="<?php echo get_template_directory_uri(); ?>/img/close_ico.png" alt="close" /></div>
     <div class="order-text-wrapper">
       <div class="order-text">Заказать обратный звонок</div>
     </div>
@@ -125,7 +125,9 @@
         </div>
         <div class="popup-cart-info-card popup-cart-info-card-price">
           <p>Общая сумма к оплате:</p>
-          <div class="popup-cart-info-card-window"><div></div><span class="product_price">7300</span> р.</div>
+          <div class="popup-cart-info-card-window">
+            <div></div><span class="product_price">7300</span> р.
+          </div>
         </div>
         <button id="submit_cart_btn" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="" data-count_adult="1">
           В корзину
@@ -160,7 +162,7 @@
             <input type="date" name="travel_date">
           </div>
         </div>
-        <?php if(is_page( 'transfer')):?>
+        <?php if (is_page('transfer')) : ?>
           <div class="popup-cart-info-card">
             <p>Места подачи:</p>
             <div class="popup-cart-info-card-window">
@@ -199,17 +201,19 @@
           </div>
           <div class="popup-cart-warning">
             <p>
-            Получить стоимость трансфера, после согласования перейти к оплате
+              Получить стоимость трансфера, после согласования перейти к оплате
             </p>
             <p>
-            По приезде/прилёте заранее гости получают данные по водителю и номер авто,
-            инструкцию по посадке.
+              По приезде/прилёте заранее гости получают данные по водителю и номер авто,
+              инструкцию по посадке.
             </p>
           </div>
-        <?php endif;?>
+        <?php endif; ?>
         <div class="popup-cart-info-card popup-cart-info-card-price">
           <p>Общая сумма к оплате:</p>
-          <div class="popup-cart-info-card-window"><div></div><span class="product_price">7300</span> р.</div>
+          <div class="popup-cart-info-card-window">
+            <div></div><span class="product_price">7300</span> р.
+          </div>
         </div>
         <button id="submit_cart_btn" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="" data-count_adult="1">
           В корзину

@@ -36,8 +36,15 @@ jQuery(function ($) {
   $("p").addClass("text-accented");
   $(".card-text,.car-text,.rev-card-text ").removeClass("text-accented");
 
-  $(".page-id-113 .card-button, .open-popup-mice").on("click", function () {
+  $(".open-popup-mice").on("click", function () {
     $(".popup-mice").addClass("active");
     return false;
+  });
+  $(".popup-close").on("click", function () {
+    $(".popup-mice").removeClass("active");
+    $(".popup-screen").removeClass("active");
+  });
+  $(".call-order").on("click", function () {
+    $(".open-call").addClass("active");
   });
 });

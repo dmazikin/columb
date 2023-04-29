@@ -95,7 +95,7 @@ $mice = new WP_Query([
         <?php if ($fieldDesc) : ?>
           <div class="special-service-btn">
             <button class="open-popup-mice card-button">Оставить заявку</button>
-            <div class="popup-screen popup-close-screen popup-mice">
+            <div class="popup-screen popup-mice">
               <div class="popup-outer">
                 <div class="popup-close"><img src="<?php echo get_template_directory_uri(); ?>/img/close_ico.png" alt="close" /></div>
                 <div class="order-text-wrapper">
