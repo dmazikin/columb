@@ -99,7 +99,7 @@ $vip = new WP_Query([
               <div class="popup-outer">
                 <div class="popup-close"><img src="<?php echo get_template_directory_uri(); ?>/img/close_ico.png" alt="close" /></div>
                 <div class="order-text-wrapper">
-                  <div class="order-text">Заявка на обслуживание мероприятия</div>
+                  <div class="order-text">Заявка на Вип-обслуживание</div>
                 </div>
                 <div class="popup-inner">
                   <?php echo do_shortcode('[contact-form-7 id="1836" title="Contact form 1"]'); ?>
